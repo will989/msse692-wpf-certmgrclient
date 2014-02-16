@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b3c047c1-cc9e-4fea-8708-9543b5996748" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53407/CertificateManagerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CertificateManagerService.xsd" MetadataType="Schema" ID="f1bbe148-4584-4ecb-beff-7bea67d3a096" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CertificateManagerService1.xsd" MetadataType="Schema" ID="8a4b6540-ee3c-40ed-b2cf-3f92bf30d3d5" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CertificateManagerService2.xsd" MetadataType="Schema" ID="3d514df0-137e-4b57-bde4-d6a7e7271316" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CertificateManagerService3.xsd" MetadataType="Schema" ID="cff09318-b864-423f-8e1b-8370a28f54e9" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CertificateManagerService.wsdl" MetadataType="Wsdl" ID="8723ff9d-5602-41ca-9f52-98e9fe37ea20" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?wsdl" />
+    <MetadataFile FileName="CertificateManagerService4.xsd" MetadataType="Schema" ID="86ffa163-56f5-4215-91c3-dd1cae7b1717" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CertificateManagerService.disco" MetadataType="Disco" ID="4a33a51d-622c-49af-a204-816336c81703" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
