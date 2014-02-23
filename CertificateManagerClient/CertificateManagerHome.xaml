@@ -7,7 +7,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="CertificateManager - Home">
     <Page.Resources>
-        <ObjectDataProvider x:Key="MyCertificateProvider" />
+        <ObjectDataProvider x:Key="MyCertificateProvider"/>
     </Page.Resources>
 
     <Grid DataContext="{Binding Source={StaticResource MyCertificateProvider}}">
@@ -22,11 +22,11 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="500"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock>
@@ -39,10 +39,10 @@
         </TextBlock>
 
         <TextBox Name="CertChooser" Grid.Column="0" Grid.Row="1" FontSize="12" Text=""></TextBox>
-        <Button Content="Choose certificate" Click="Button_Click" Grid.Column="1" Grid.Row="1" Margin="5"/>
-        <TextBox Name="CertName" Margin="5" Grid.Column="0" Grid.Row="2" FontSize="12" Text="{Binding Name}"></TextBox>
+        <Button Content="Choose certificate" Width="100" Height="25" Click="Button_Click" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="5"/>
+        <TextBox Name="CertName" Margin="5" Grid.Column="0" Grid.Row="2" FontSize="12" Text=""></TextBox>
         <Label Name="CertNameLabel" Content="Certificate Name" Margin="5" Grid.Column="1" Grid.Row="2" ToolTip="The certificate name from the SubjectName.Name attribute"></Label>
-        <TextBox Name="StartDate" Margin="5" Grid.Column="0" Grid.Row="3" FontSize="12" Text="{Binding StartDate}"></TextBox>
+        <TextBox Name="StartDate" Margin="5" Grid.Column="0" Grid.Row="3" FontSize="12" Text=""></TextBox>
         <Label Name="StartDateLabel" Content="Start Date" Margin="5" Grid.Column="1" Grid.Row="3" ToolTip="The certificate's start date from the NotBefore attribute" RenderTransformOrigin="0.559,-0.532"></Label>
         <TextBox Name="EndDate" Margin="5" Grid.Column="0" Grid.Row="4" FontSize="12" Text=""></TextBox>
         <Label Name="EndDateLabel" Content="End Date" Margin="5" Grid.Column="1" Grid.Row="4" ToolTip="The certificate's end date, generally from the NotAfter attribute"></Label>
@@ -52,9 +52,9 @@
         <Label Name="ExpirationDateLabel" Content="Expiration Date" Margin="5" Grid.Column="1" Grid.Row="6" ToolTip="The certificate's end date, from the NotAfter attribute"></Label>
         <TextBox Name="Thumbprint" Margin="5" Grid.Column="0" Grid.Row="7" FontSize="12" Text=""></TextBox>
         <Label Name="ThumbprintLabel" Content="Certificate Thumbprint" Margin="5" Grid.Column="1" Grid.Row="7" ToolTip="The certificate's thumbprint"></Label>
-        <TextBox Name="CertContent" Margin="5" Grid.Column="0" Grid.Row="8" Text=""></TextBox>
-        <Label Name="CertContentLabel" Content="Certificate Content" Margin="5" Grid.Column="1" Grid.Row="8" ToolTip="The certificate's content"></Label>
-        <Button x:Name ="SaveCertButton" Content="Save Certificate" Width="100" Height="25" Grid.Column="0" Grid.Row="9" Margin="5" Click ="SaveCertButton_Click"/>
+        <TextBox Name="CertContent" Margin="5" Grid.Column="0" Grid.Row="9" Text="" Visibility="Hidden"></TextBox>
+        <Label Name="CertContentLabel" Content="Certificate Content" Margin="5" Grid.Column="1" Grid.Row="9" Visibility="Hidden" ToolTip="The certificate's content"></Label>
+        <Button x:Name ="SaveCertButton" Content="Save Certificate" Width="100" Height="25" Grid.Column="0" Grid.Row="8" Margin="5" Visibility="Visible" Click ="SaveCertButton_Click"/>
     </Grid>
 </Page>
 
