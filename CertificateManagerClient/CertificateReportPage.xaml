@@ -2,12 +2,61 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:s="clr-namespace:System.Collections;assembly=mscorlib"
+      xmlns:p="clr-namespace:System;assembly=mscorlib"
+      xmlns:generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="CertificateManager - View Certificates">
 
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock>
+         <Hyperlink>Certificate Report Page
+             <Hyperlink.NavigateUri>CertificateReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+               <Hyperlink>Add Certificate Page
+             <Hyperlink.NavigateUri>AddCertificate.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+        </TextBlock>
+   
+        <Label Name="ServerLabel" Content="Server Name" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" ToolTip="Which server to install certificate on"></Label>
+        <TextBox Name="ServerName" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
         
+        
+        <Label Name="CertStoreLocationLabel" Content="Certificate Store Location" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" ToolTip="The certificate store location (LocalComputer)"></Label>
+        <RadioButton GroupName="Location" Content="Local Computer" IsChecked="True" Grid.Column="0" Grid.Row="3"/>
+        <RadioButton GroupName="Location" Content="Local User" Grid.Column="0" Grid.Row="4"/>
+
+        <Label Name="StoreLabel" Content="Certificate Store" Visibility="Visible" Margin="5" Grid.Column="1" Grid.Row="5" ToolTip="Which store to install certificate into"></Label>
+        <ListBox Name="Store" Margin="5" Grid.Column="0" Visibility="Visible" Grid.Row="5" FontSize="12">
+            <ListBoxItem Content="CA"></ListBoxItem>
+            <ListBoxItem Content="MY"></ListBoxItem>
+            <ListBoxItem Content="ROOT"></ListBoxItem>
+            <ListBoxItem Content="TRUST"></ListBoxItem>
+        </ListBox>
+
+        <Button x:Name ="ListCertButton" Content="List Certificates" Width="100" Height="25" Grid.Column="0" Grid.Row="6" Click ="ListCertButton_Click">
+        </Button>
+
+        <DataGrid x:Name="CertDataGrid" IsReadOnly="True" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center" 
+  VerticalAlignment="Center" AutoGenerateColumns="True">
+        </DataGrid>
     </Grid>
 </Page>

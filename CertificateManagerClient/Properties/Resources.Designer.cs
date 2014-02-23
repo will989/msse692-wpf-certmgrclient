@@ -9,8 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace CertificateManagerClient.Properties {
-    
-    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -37,7 +35,7 @@ namespace CertificateManagerClient.Properties {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if ((resourceMan == null)) {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CertificateManagerClient.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

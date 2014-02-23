@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace CertificateManagerClient.TestUtilities
+﻿namespace CertificateManagerClient.TestUtilities
 {
     using System;
     using System.Security.Cryptography.X509Certificates;
