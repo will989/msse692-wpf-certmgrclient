@@ -81,6 +81,9 @@
     <Compile Include="AddCertificate.xaml.cs">
       <DependentUpon>AddCertificate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExpiringCertificateReportPage.xaml.cs">
+      <DependentUpon>ExpiringCertificateReportPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrganizationPage.xaml.cs">
       <DependentUpon>OrganizationPage.xaml</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
       <DependentUpon>CertificateManagerMainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ExpiringCertificateReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CertificateReportPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -264,6 +271,10 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\hero-fpo-about.jpg" />
   </ItemGroup>
   <PropertyGroup>
     <StartArguments />

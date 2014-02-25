@@ -10,8 +10,8 @@
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="CertificateManager - View Certificates">
 
-
-    <Grid>
+    <ScrollViewer Grid.Row="1">
+        <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -26,17 +26,34 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-
-        <TextBlock>
-         <Hyperlink>Certificate Report Page
+            <Image Width="300">
+                <Image.Source>
+                    <!-- To save significant application memory, set the DecodePixelWidth or  
+     DecodePixelHeight of the BitmapImage value of the image source to the desired 
+     height and width of the rendered image. If you don't do this, the application will 
+     cache the image as though it were rendered as its normal size rather then just 
+     the size that is displayed. -->
+                    <!-- Note: In order to preserve aspect ratio, only set either DecodePixelWidth
+         or DecodePixelHeight but not both. -->
+                    <BitmapImage DecodePixelWidth="200"  
+     UriSource="Images\hero-fpo-about.jpg" />
+                </Image.Source>
+                </Image>
+            <Border BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0">
+                <TextBlock>
+         <Hyperlink>Certificate Report Page    
              <Hyperlink.NavigateUri>CertificateReportPage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
-               <Hyperlink>Add Certificate Page
+               <Hyperlink>     Add Certificate Page
              <Hyperlink.NavigateUri>AddCertificate.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
-        </TextBlock>
-   
-        <Label Name="ServerLabel" Content="Server Name" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" ToolTip="Which server to install certificate on"></Label>
+         <Hyperlink>      Expiring Certificate Report Page
+             <Hyperlink.NavigateUri>ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+                </TextBlock>
+            </Border>
+
+            <Label Name="ServerLabel" Content="Server Name" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" ToolTip="Which server to install certificate on"></Label>
         <TextBox Name="ServerName" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
         
         
@@ -59,4 +76,5 @@
   VerticalAlignment="Center" AutoGenerateColumns="True">
         </DataGrid>
     </Grid>
+    </ScrollViewer>
 </Page>

@@ -14,9 +14,9 @@ namespace CertificateManagerClient
     /// <summary>
     /// Interaction logic for CertificateReportPage.xaml
     /// </summary>
-    public partial class CertificateReportPage : Page
+    public partial class ExpiringCertificateReportPage : Page
     {
-        public CertificateReportPage()
+        public ExpiringCertificateReportPage()
         {
             InitializeComponent();
 
@@ -37,32 +37,50 @@ namespace CertificateManagerClient
                 switch (index)
                 {
                     case 0:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                     case 1:
-                        {
-                            newStoreName = "My";
-                            break;
-                        }
+                    {
+                        newStoreName = "My";
+                        break;
+                    }
                     case 2:
-                        {
-                            newStoreName = "Root";
-                            break;
-                        }
+                    {
+                        newStoreName = "Root";
+                        break;
+                    }
                     case 3:
-                        {
-                            newStoreName = "AuthRoot";
-                            break;
-                        }
+                    {
+                        newStoreName = "AuthRoot";
+                        break;
+                    }
                     default:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                 }
             }//end if
+/*
+                if (newStoreName.Contains("CA"))
+                    {
+                        storeName = StoreName.CertificateAuthority;
+                        newStoreName = storeName.ToString();
+                        if (newStoreName.Equals("CertificateAuthority"))
+                        {
+                            newStoreName = "CA";
+                        }
+                        System.Diagnostics.Debug.WriteLine("newStoreName = {0}", newStoreName);
+                    }
+              
+            }
+            else
+            {
+                newStoreName = "CA";
+            }
+ */
             //hard-coded since Local User only works on the local machine
                 var storeLocation = StoreLocation.LocalMachine;
 
@@ -75,9 +93,12 @@ namespace CertificateManagerClient
                 serverName = "7000Laptop";
             }
 
+            int expirationDays = Convert.ToInt32(ExpCertDays.Text);
+           
             System.Diagnostics.Debug.WriteLine("serverName = {0}", serverName);
             System.Diagnostics.Debug.WriteLine("newStoreName = {0}", newStoreName);
             System.Diagnostics.Debug.WriteLine("storeLocation = {0}", storeLocation.ToString());
+            System.Diagnostics.Debug.WriteLine("# of days = {0}", expirationDays);
                 
 
 
@@ -86,13 +107,13 @@ namespace CertificateManagerClient
 
             try
             {
-                List<X509Certificate2> certList =
-                    new List<X509Certificate2>(wsref.ListCertificatesInStore(newStoreName, storeLocation));
+                List<X509Certificate2> expCertList =
+                    new List<X509Certificate2>(wsref.ListExpiringCertificatesInStore(newStoreName, storeLocation, expirationDays));
 
                 //should be greater than 0
-                int size = certList.Count;
-                System.Diagnostics.Debug.WriteLine("certList count = {0}", size);
-                CertDataGrid.ItemsSource = certList;
+                int size = expCertList.Count;
+                System.Diagnostics.Debug.WriteLine("expCertList count = {0}", size);
+                CertDataGrid.ItemsSource = expCertList;
             }
             catch (EndpointNotFoundException epnfe)
             {
