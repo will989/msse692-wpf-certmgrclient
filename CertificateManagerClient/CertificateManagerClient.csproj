@@ -81,6 +81,12 @@
     <Compile Include="AddCertificate.xaml.cs">
       <DependentUpon>AddCertificate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CertificateWarehouseFindCertificatePage.xaml.cs">
+      <DependentUpon>CertificateWarehouseFindCertificatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CertificateWarehouseReportPage.xaml.cs">
+      <DependentUpon>CertificateWarehouseReportPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExpiringCertificateReportPage.xaml.cs">
       <DependentUpon>ExpiringCertificateReportPage.xaml</DependentUpon>
     </Compile>
@@ -122,6 +128,14 @@
       <DependentUpon>CertificateManagerMainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="CertificateWarehouseFindCertificatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CertificateWarehouseReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ExpiringCertificateReportPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

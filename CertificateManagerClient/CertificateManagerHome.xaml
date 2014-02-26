@@ -55,6 +55,12 @@
          <Hyperlink>      Expiring Certificate Report Page
              <Hyperlink.NavigateUri>ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
+         <Hyperlink>      Certificate Warehouse Report Page
+             <Hyperlink.NavigateUri>CertificateWarehouseReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+         <Hyperlink>      Certificate Warehouse Find Certificate Page
+             <Hyperlink.NavigateUri>CertificateWarehouseFindCertificatePage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
             </TextBlock>
         </Border>
         <TextBlock Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
