@@ -9,6 +9,9 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using CertificateManagerClient.CertificateWarehouseService;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using ObjectId = MongoDB.Bson.ObjectId;
 
 namespace CertificateManagerClient
 {
@@ -36,7 +39,6 @@ namespace CertificateManagerClient
             string name = null;
             try
             {
-
                 if (Thumbprint.Text.Length >= 1)
                 {
                     MyCertificate = wsref.GetCertificateByThumbprint(Thumbprint.Text);
@@ -50,12 +52,18 @@ namespace CertificateManagerClient
                     MyCertificate = wsref.GetCertificateByName(CertName.Text);
                 }
 
+                CertificateWarehouseService.ObjectId objectId = new CertificateWarehouseService.ObjectId();
+                objectId = MyCertificate.Id;
+                string stringId = objectId.ToString();
 
+                System.Diagnostics.Debug.WriteLine("ObjectId = {0}", stringId);
+                System.Diagnostics.Debug.WriteLine("Name = {0}", MyCertificate.Name);
+                System.Diagnostics.Debug.WriteLine("Thumbprint = {0}", MyCertificate.Thumbprint);
+                System.Diagnostics.Debug.WriteLine("StartDate = {0}", MyCertificate.StartDate);
+                System.Diagnostics.Debug.WriteLine("ExpirationDate = {0}", MyCertificate.ExpirationDate);
 
                 //from here:  http://www.codeproject.com/Articles/321899/DataContext-in-WPF
-                this.DataContext = MyCertificate;
-            
-               
+                if (MyCertificate != null) this.DataContext = MyCertificate;
             }
             catch (EndpointNotFoundException epnfe)
             {

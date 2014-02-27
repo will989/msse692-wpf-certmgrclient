@@ -1,0 +1,91 @@
+﻿<Page x:Class="CertificateManagerClient.CertificateManagerClientHome"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="CertificateManagerClientHome">
+
+    <Grid Background="AliceBlue">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="500"/>
+        </Grid.ColumnDefinitions>
+        <Image Width="300">
+            <Image.Source>
+                <!-- To save significant application memory, set the DecodePixelWidth or  
+     DecodePixelHeight of the BitmapImage value of the image source to the desired 
+     height and width of the rendered image. If you don't do this, the application will 
+     cache the image as though it were rendered as its normal size rather then just 
+     the size that is displayed. -->
+                <!-- Note: In order to preserve aspect ratio, only set either DecodePixelWidth
+         or DecodePixelHeight but not both. -->
+                <BitmapImage DecodePixelWidth="200"  
+     UriSource="Images\hero-fpo-about.jpg" />
+            </Image.Source>
+        </Image>
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0">
+            <TextBlock>
+         <Hyperlink>Certificate Report Page    
+             <Hyperlink.NavigateUri>CertificateReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+               <Hyperlink>     Add Certificate Page
+             <Hyperlink.NavigateUri>AddCertificate.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+         <Hyperlink>      Expiring Certificate Report Page
+             <Hyperlink.NavigateUri>ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+         <Hyperlink>      Certificate Warehouse Report Page
+             <Hyperlink.NavigateUri>CertificateWarehouseReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+         <Hyperlink>      Certificate Warehouse Find Certificate Page
+             <Hyperlink.NavigateUri>CertificateWarehouseFindCertificatePage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+            </TextBlock>
+        </Border>
+        <Label Name="CertificateManagerLabel" Content="Certificate Manager Links" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" ToolTip="Links for managing certificates in Windows Certificate Stores"></Label>
+        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+        <Hyperlink>Certificate Report Page
+            <Hyperlink.NavigateUri>CertificateReportPage.xaml</Hyperlink.NavigateUri>
+        </Hyperlink>
+            </TextBlock>
+         <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
+        <Hyperlink>Add Certificate Page
+            <Hyperlink.NavigateUri>AddCertificate.xaml</Hyperlink.NavigateUri>
+        </Hyperlink>
+             </TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2">
+        <Hyperlink>Expiring Certificate Report Page
+            <Hyperlink.NavigateUri>ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
+        </Hyperlink>
+            </TextBlock>
+        <Label Name="CertificateWarehouseLabel" Content="Certificate Warehouse Links" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" ToolTip="Links for managing certificates in a repository"></Label>
+        <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Hyperlink>Certificate Warehouse Report Page
+             <Hyperlink.NavigateUri>CertificateWarehouseReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+            </TextBlock>
+        <TextBlock Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2">
+         <Hyperlink>Certificate Warehouse Find Certificate Page
+             <Hyperlink.NavigateUri>CertificateWarehouseFindCertificatePage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+        </TextBlock>
+    </Grid>
+</Page>

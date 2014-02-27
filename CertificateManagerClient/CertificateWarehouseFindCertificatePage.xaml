@@ -78,12 +78,28 @@
             </Button>
 
             <Grid x:Name="CertDataGrid"  Grid.Column="0" Grid.Row="7" Grid.RowSpan="6">
-                <TextBox Name= "CertificateIdTextBox" Text="{Binding Path=Id}" Grid.Column="0" Grid.Row="8"></TextBox>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="500"/>
+                </Grid.ColumnDefinitions>
+                <Label Name="CertificateDetailsLabel" Content="Found Certificate Details" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2"></Label>
+                <Label Name="CertificateNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="1" Grid.Row="1" Visibility="Visible"></Label>
+                <Label Name= "CertificateNameTextBox" Content="{Binding Path=Name}" Grid.Column="0" Grid.Row="1"></Label>
+                <Label Name="CertificateThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible"></Label>
+                <Label Name= "CertificateThumbprintTextBox" Content="{Binding Path=Thumbprint}" Grid.Column="0" Grid.Row="2" />
+                <Label Name="CertificateStartDtLabel" Content="Start Date of Certificate" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible"></Label>
+                <Label Name="CertificateStartDtTextBox"  Content="{Binding Path=StartDate}" Grid.Column="0" Grid.Row="3"></Label>
+                <Label Name="CertificateExpDtLabel" Content="Expiration Date of Certificate" Margin="5" Grid.Column="1" Grid.Row="4" Visibility="Visible"></Label>
+                <Label Name="CertificateExpDtTextBox" Content="{Binding Path=ExpirationDate}" Grid.Column="0" Grid.Row="4" />
                
-                <TextBox Name= "CertificateThumbprintTextBox" Text="{Binding Path=Thumbprint}" Grid.Column="0" Grid.Row="10" />
-                <TextBox Name="CertificateStartDtTextBox"  Text="{Binding Path=StartDate}" Grid.Column="0" Grid.Row="11"></TextBox>
-                <TextBox Name="CertificateExpDtTextBox" Text="{Binding Path=ExpirationDate}" Grid.Column="0" Grid.Row="12" />
-                <TextBox Name= "CertificateNameTextBox" Text="{Binding Path=Name}" Grid.Column="0" Grid.Row="9"></TextBox>
             </Grid>
         </Grid>
     </ScrollViewer>
