@@ -52,11 +52,6 @@ namespace CertificateManagerClient
                     MyCertificate = wsref.GetCertificateByName(CertName.Text);
                 }
 
-                CertificateWarehouseService.ObjectId objectId = new CertificateWarehouseService.ObjectId();
-                objectId = MyCertificate.Id;
-                string stringId = objectId.ToString();
-
-                System.Diagnostics.Debug.WriteLine("ObjectId = {0}", stringId);
                 System.Diagnostics.Debug.WriteLine("Name = {0}", MyCertificate.Name);
                 System.Diagnostics.Debug.WriteLine("Thumbprint = {0}", MyCertificate.Thumbprint);
                 System.Diagnostics.Debug.WriteLine("StartDate = {0}", MyCertificate.StartDate);

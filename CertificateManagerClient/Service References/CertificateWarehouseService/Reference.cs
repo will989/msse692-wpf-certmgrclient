@@ -9,6 +9,10 @@
 //------------------------------------------------------------------------------
 
 namespace CertificateManagerClient.CertificateWarehouseService {
+    using System.Runtime.Serialization;
+    using System;
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrganizationCertificate", Namespace="http://schemas.datacontract.org/2004/07/CertificateManager.Data.Entities")]
@@ -22,7 +26,7 @@ namespace CertificateManagerClient.CertificateWarehouseService {
         private bool ActiveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private CertificateManagerClient.CertificateWarehouseService.ObjectId CertificateIdField;
+        private MongoDB.Bson.ObjectId CertificateIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PurposeField;
@@ -51,7 +55,7 @@ namespace CertificateManagerClient.CertificateWarehouseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CertificateManagerClient.CertificateWarehouseService.ObjectId CertificateId {
+        public MongoDB.Bson.ObjectId CertificateId {
             get {
                 return this.CertificateIdField;
             }
@@ -88,94 +92,6 @@ namespace CertificateManagerClient.CertificateWarehouseService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ObjectId", Namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson")]
-    [System.SerializableAttribute()]
-    public partial struct ObjectId : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int _incrementField;
-        
-        private int _machineField;
-        
-        private short _pidField;
-        
-        private int _timestampField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int _increment {
-            get {
-                return this._incrementField;
-            }
-            set {
-                if ((this._incrementField.Equals(value) != true)) {
-                    this._incrementField = value;
-                    this.RaisePropertyChanged("_increment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int _machine {
-            get {
-                return this._machineField;
-            }
-            set {
-                if ((this._machineField.Equals(value) != true)) {
-                    this._machineField = value;
-                    this.RaisePropertyChanged("_machine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public short _pid {
-            get {
-                return this._pidField;
-            }
-            set {
-                if ((this._pidField.Equals(value) != true)) {
-                    this._pidField = value;
-                    this.RaisePropertyChanged("_pid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int _timestamp {
-            get {
-                return this._timestampField;
-            }
-            set {
-                if ((this._timestampField.Equals(value) != true)) {
-                    this._timestampField = value;
-                    this.RaisePropertyChanged("_timestamp");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="MongoEntity", Namespace="http://schemas.datacontract.org/2004/07/CertificateManager.Data.Entities")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CertificateManagerClient.CertificateWarehouseService.Certificate))]
@@ -186,7 +102,7 @@ namespace CertificateManagerClient.CertificateWarehouseService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private CertificateManagerClient.CertificateWarehouseService.ObjectId IdField;
+        private MongoDB.Bson.ObjectId IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -199,7 +115,7 @@ namespace CertificateManagerClient.CertificateWarehouseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CertificateManagerClient.CertificateWarehouseService.ObjectId Id {
+        public MongoDB.Bson.ObjectId Id {
             get {
                 return this.IdField;
             }
@@ -407,6 +323,10 @@ namespace CertificateManagerClient.CertificateWarehouseService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateWarehouseService/GetCertificatesDetails", ReplyAction="http://tempuri.org/ICertificateWarehouseService/GetCertificatesDetailsResponse")]
         CertificateManagerClient.CertificateWarehouseService.Certificate[] GetCertificatesDetails(int limit, int skip);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateWarehouseService/GetCertificatesByExpirationDate", ReplyAction="http://tempuri.org/ICertificateWarehouseService/GetCertificatesByExpirationDateRe" +
+            "sponse")]
+        CertificateManagerClient.CertificateWarehouseService.Certificate[] GetCertificatesByExpirationDate(int futureDays);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateWarehouseService/DoWork", ReplyAction="http://tempuri.org/ICertificateWarehouseService/DoWorkResponse")]
         void DoWork();
     }
@@ -464,6 +384,10 @@ namespace CertificateManagerClient.CertificateWarehouseService {
         
         public CertificateManagerClient.CertificateWarehouseService.Certificate[] GetCertificatesDetails(int limit, int skip) {
             return base.Channel.GetCertificatesDetails(limit, skip);
+        }
+        
+        public CertificateManagerClient.CertificateWarehouseService.Certificate[] GetCertificatesByExpirationDate(int futureDays) {
+            return base.Channel.GetCertificatesByExpirationDate(futureDays);
         }
         
         public void DoWork() {
