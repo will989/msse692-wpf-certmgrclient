@@ -90,6 +90,12 @@
     <Compile Include="CertificateManagerClientHome.xaml.cs">
       <DependentUpon>CertificateManagerClientHome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CertificateWarehouseAddCertToDatabasePage.xaml.cs">
+      <DependentUpon>CertificateWarehouseAddCertToDatabasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompareCertificateStoreContentsPage.xaml.cs">
+      <DependentUpon>CompareCertificateStoreContentsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CertificateWarehouseFindCertificatePage.xaml.cs">
       <DependentUpon>CertificateWarehouseFindCertificatePage.xaml</DependentUpon>
     </Compile>
@@ -125,6 +131,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CertificateWarehouseAddCertToDatabasePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CertificateManagerHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +154,10 @@
       <DependentUpon>CertificateManagerMainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="CompareCertificateStoreContentsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CertificateWarehouseFindCertificatePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -306,7 +320,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CertificateManagerPages\" />
+    <Folder Include="CertificateWarehousePages\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\hero-fpo-about.jpg" />
   </ItemGroup>

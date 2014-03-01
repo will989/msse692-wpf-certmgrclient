@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
+using System.ServiceModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -47,42 +48,54 @@ namespace CertificateManagerClient
             //instantiate web service
             CertificateManagerService.CertificateManagerServiceClient
                  wsref = new CertificateManagerService.CertificateManagerServiceClient();
-
+            string serverName = null;
             Certificate certificate = new Certificate();
-            //certificate.Name = CertName.Text;
-            //certificate.StartDate = Convert.ToDateTime(StartDate.Text);
-            //certificate.EndDate = Convert.ToDateTime(EndDate.Text);
-            //certificate.ExpirationDate = Convert.ToDateTime(ExpirationDate.Text);
-            //certificate.Thumbprint = Thumbprint.Text;
+
             //try converting certificate content from text back to bytes (http://www.dotnetperls.com/convert-string-byte-array)
             certificate.Content = Encoding.ASCII.GetBytes(CertContent.Text);
 
-            //this will probably work, but I may not need it:
-            /*
-            var file = "newCertFile.cer";
-            try
-            {
-                File.WriteAllBytes(file, certificate.Content);
-            }
-            catch (Exception)
-            {
-                { }
-                throw;
-            }
-            */
-            // *** FOR TESTING -- NEED TO PASS THESE IN FROM THE PAGE SOMEHOW ***
-            //create a unique subjectName
-            //string subjectName = string.Format("{0:yyyy-MM-dd_hh-mm-ss-tt}", DateTime.Now);
-            //509Store testStore = new X509Store();
-
+    
             string newStoreName = Store.SelectedItem.ToString();
             X509Store store = new X509Store(newStoreName, StoreLocation.LocalMachine);
-            
-            
+
+
+            //create a new X509 certificate from the loaded content
             X509Certificate2 certificate2 =
                 new X509Certificate2(certificate.Content);
 
-           bool added = wsref.InstallCertificateLocal(store, certificate2);
+            bool added = false;
+            if (ServerName.Text != null)
+            {
+                serverName = ServerName.Text;
+                try
+                {
+                    added = wsref.InstallCertificateRemote(store, certificate2, serverName);
+                }
+                catch (EndpointNotFoundException epnfe)
+                {
+                    System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
+                }
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("serverName is null!!");
+                try
+                {
+                    added = wsref.InstallCertificateLocal(store, certificate2);
+                }
+                catch (EndpointNotFoundException epnfe)
+                {
+                    System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
+                }
+            }
 
             if (added)
             {

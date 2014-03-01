@@ -31,6 +31,7 @@ namespace CertificateManagerClient
             string newStoreName = null;
             string serverName = null;
             StoreName storeName = new StoreName();
+            int expirationDays = Convert.ToInt32(ExpCertDays.Text);
             if (Store.SelectedItem != null)
             {
                 int index = Store.SelectedIndex;
@@ -63,53 +64,20 @@ namespace CertificateManagerClient
                     }
                 }
             }//end if
-/*
-                if (newStoreName.Contains("CA"))
-                    {
-                        storeName = StoreName.CertificateAuthority;
-                        newStoreName = storeName.ToString();
-                        if (newStoreName.Equals("CertificateAuthority"))
-                        {
-                            newStoreName = "CA";
-                        }
-                        System.Diagnostics.Debug.WriteLine("newStoreName = {0}", newStoreName);
-                    }
-              
-            }
-            else
-            {
-                newStoreName = "CA";
-            }
- */
+
             //hard-coded since Local User only works on the local machine
                 var storeLocation = StoreLocation.LocalMachine;
 
             if (ServerName.Text != null)
             {
                 serverName = ServerName.Text;
-            }
-            else
-            {
-                serverName = "7000Laptop";
-            }
-
-            int expirationDays = Convert.ToInt32(ExpCertDays.Text);
-           
-            System.Diagnostics.Debug.WriteLine("serverName = {0}", serverName);
-            System.Diagnostics.Debug.WriteLine("newStoreName = {0}", newStoreName);
-            System.Diagnostics.Debug.WriteLine("storeLocation = {0}", storeLocation.ToString());
-            System.Diagnostics.Debug.WriteLine("# of days = {0}", expirationDays);
+                try
+                {
+                    List<X509Certificate2> expCertList =
+                        new List<X509Certificate2>(wsref.ListExpiringCertificatesInRemoteStore(newStoreName,
+                            storeLocation, expirationDays, serverName));
                 
-
-
-                //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
-                //try to retrieve certificates from a remote CA
-
-            try
-            {
-                List<X509Certificate2> expCertList =
-                    new List<X509Certificate2>(wsref.ListExpiringCertificatesInStore(newStoreName, storeLocation, expirationDays));
-
+                
                 //should be greater than 0
                 int size = expCertList.Count;
                 System.Diagnostics.Debug.WriteLine("expCertList count = {0}", size);
@@ -123,6 +91,44 @@ namespace CertificateManagerClient
             {
                 System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
             }
+
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("serverName is null!!");
+                try
+                {
+                    List<X509Certificate2> expCertList =
+                        new List<X509Certificate2>(wsref.ListExpiringCertificatesInStore(newStoreName, storeLocation, expirationDays));
+
+                    //should be greater than 0
+                    int size = expCertList.Count;
+                    System.Diagnostics.Debug.WriteLine("expCertList count = {0}", size);
+                    CertDataGrid.ItemsSource = expCertList;
+                }
+                catch (EndpointNotFoundException epnfe)
+                {
+                    System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
+                }
+            }
+
+            
+           
+            System.Diagnostics.Debug.WriteLine("serverName = {0}", serverName);
+            System.Diagnostics.Debug.WriteLine("newStoreName = {0}", newStoreName);
+            System.Diagnostics.Debug.WriteLine("storeLocation = {0}", storeLocation.ToString());
+            System.Diagnostics.Debug.WriteLine("# of days = {0}", expirationDays);
+                
+
+
+                //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
+                //try to retrieve certificates from a remote CA
+
+            
         }
 
         private void FrameworkElement_OnLoaded(object sender, RoutedEventArgs e)

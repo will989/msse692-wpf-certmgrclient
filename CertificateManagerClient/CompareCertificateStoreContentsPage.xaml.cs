@@ -14,9 +14,9 @@ namespace CertificateManagerClient
     /// <summary>
     /// Interaction logic for CertificateReportPage.xaml
     /// </summary>
-    public partial class CertificateReportPage : Page
+    public partial class CompareCertificateStoreContentsPage : Page
     {
-        public CertificateReportPage()
+        public CompareCertificateStoreContentsPage()
         {
             InitializeComponent();
 
@@ -30,10 +30,8 @@ namespace CertificateManagerClient
                  wsref = new CertificateManagerService.CertificateManagerServiceClient();
             string newStoreName = null;
             string serverName = null;
+            string serverName2 = null;
             StoreName storeName = new StoreName();
-            var certList = new List<X509Certificate2>();
-
-
             if (Store.SelectedItem != null)
             {
                 int index = Store.SelectedIndex;
@@ -71,48 +69,24 @@ namespace CertificateManagerClient
 
             if (ServerName.Text != null)
             {
-                serverName = ServerName.Text;
-                 try
-            {
-                certList = new List<X509Certificate2>(wsref.ListCertificatesInRemoteStore(newStoreName, storeLocation, serverName));
-
-                //should be greater than 0
-                int size = certList.Count;
-                System.Diagnostics.Debug.WriteLine("certList count = {0}", size);
-                CertDataGrid.ItemsSource = certList;
-            }
-                 catch (EndpointNotFoundException epnfe)
-                 {
-                     System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
-                 }
-                 catch (Exception ex)
-                 {
-                     System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
-                 }
+                serverName = ServerName2.Text;
             }
             else
             {
-                System.Diagnostics.Debug.WriteLine("serverName is null!!");
-                try
-                {
-                    certList = new List<X509Certificate2>(wsref.ListCertificatesInStore(newStoreName, storeLocation));
+                serverName = "7000Laptop";
+            }
 
-                    //should be greater than 0
-                    int size = certList.Count;
-                    System.Diagnostics.Debug.WriteLine("certList count = {0}", size);
-                    CertDataGrid.ItemsSource = certList;
-                }
-                catch (EndpointNotFoundException epnfe)
-                {
-                    System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
-                }
+            if (ServerName2.Text != null)
+            {
+                serverName2 = ServerName2.Text;
+            }
+            else
+            {
+                serverName2 = "7000Laptop";
             }
 
             System.Diagnostics.Debug.WriteLine("serverName = {0}", serverName);
+            System.Diagnostics.Debug.WriteLine("serverName2 = {0}", serverName2);
             System.Diagnostics.Debug.WriteLine("newStoreName = {0}", newStoreName);
             System.Diagnostics.Debug.WriteLine("storeLocation = {0}", storeLocation.ToString());
                 
@@ -121,8 +95,24 @@ namespace CertificateManagerClient
                 //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
                 //try to retrieve certificates from a remote CA
 
-           
-           
+            try
+            {
+                List<X509Certificate2> certList =
+                    new List<X509Certificate2>(wsref.CompareCertificatesInStore(newStoreName, storeLocation, serverName, serverName2));
+
+                //should be greater than 0
+                int size = certList.Count;
+                System.Diagnostics.Debug.WriteLine("certList count = {0}", size);
+                CertDataGrid.ItemsSource = certList;
+            }
+            catch (EndpointNotFoundException epnfe)
+            {
+                System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
+            }
         }
 
         private void FrameworkElement_OnLoaded(object sender, RoutedEventArgs e)

@@ -9,6 +9,10 @@
 //------------------------------------------------------------------------------
 
 namespace CertificateManagerClient.CertificateManagerService {
+    using System.Runtime.Serialization;
+    using System;
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/CertificateManager")]
@@ -85,6 +89,11 @@ namespace CertificateManagerClient.CertificateManagerService {
             "onse")]
         System.Security.Cryptography.X509Certificates.X509Certificate2[] ListExpiringCertificatesInStore(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, int days);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateManagerService/ListExpiringCertificatesInRemoteSto" +
+            "re", ReplyAction="http://tempuri.org/ICertificateManagerService/ListExpiringCertificatesInRemoteSto" +
+            "reResponse")]
+        System.Security.Cryptography.X509Certificates.X509Certificate2[] ListExpiringCertificatesInRemoteStore(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, int days, string serverName);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateManagerService/PrintCertificateInfo", ReplyAction="http://tempuri.org/ICertificateManagerService/PrintCertificateInfoResponse")]
         void PrintCertificateInfo(System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);
         
@@ -105,8 +114,21 @@ namespace CertificateManagerClient.CertificateManagerService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CertificateManagerClient.CertificateManagerService.CompositeType))]
         bool InstallCertificateLocal(System.Security.Cryptography.X509Certificates.X509Store store, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateManagerService/InstallCertificateRemote", ReplyAction="http://tempuri.org/ICertificateManagerService/InstallCertificateRemoteResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Security.Cryptography.X509Certificates.StoreLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Security.Cryptography.X509Certificates.X509Certificate2[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Security.Cryptography.X509Certificates.X509Certificate2))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Security.Cryptography.X509Certificates.X509Certificate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Security.Cryptography.X509Certificates.StoreName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CertificateManagerClient.CertificateManagerService.CompositeType))]
+        bool InstallCertificateRemote(System.Security.Cryptography.X509Certificates.X509Store store, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, string serverName);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateManagerService/DeleteCertificate", ReplyAction="http://tempuri.org/ICertificateManagerService/DeleteCertificateResponse")]
         bool DeleteCertificate(string certificateName, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateManagerService/DeleteCertificateRemote", ReplyAction="http://tempuri.org/ICertificateManagerService/DeleteCertificateRemoteResponse")]
+        bool DeleteCertificateRemote(string certificateName, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location, string serverName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateManagerService/DeleteCertificateByThumbprint", ReplyAction="http://tempuri.org/ICertificateManagerService/DeleteCertificateByThumbprintRespon" +
             "se")]
@@ -171,6 +193,10 @@ namespace CertificateManagerClient.CertificateManagerService {
             return base.Channel.ListExpiringCertificatesInStore(storeName, storeLocation, days);
         }
         
+        public System.Security.Cryptography.X509Certificates.X509Certificate2[] ListExpiringCertificatesInRemoteStore(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, int days, string serverName) {
+            return base.Channel.ListExpiringCertificatesInRemoteStore(storeName, storeLocation, days, serverName);
+        }
+        
         public void PrintCertificateInfo(System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) {
             base.Channel.PrintCertificateInfo(certificate);
         }
@@ -187,8 +213,16 @@ namespace CertificateManagerClient.CertificateManagerService {
             return base.Channel.InstallCertificateLocal(store, certificate);
         }
         
+        public bool InstallCertificateRemote(System.Security.Cryptography.X509Certificates.X509Store store, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, string serverName) {
+            return base.Channel.InstallCertificateRemote(store, certificate, serverName);
+        }
+        
         public bool DeleteCertificate(string certificateName, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location) {
             return base.Channel.DeleteCertificate(certificateName, storeName, location);
+        }
+        
+        public bool DeleteCertificateRemote(string certificateName, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location, string serverName) {
+            return base.Channel.DeleteCertificateRemote(certificateName, storeName, location, serverName);
         }
         
         public bool DeleteCertificateByThumbprint(string certificateName, string thumbprint, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location) {
