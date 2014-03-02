@@ -66,6 +66,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -228,9 +229,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CertificateManagerService\CertificateManagerService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CertificateWarehouseService\CertificateManagerClient.CertificateWarehouseService.Certificate.datasource">

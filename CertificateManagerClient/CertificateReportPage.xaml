@@ -7,7 +7,7 @@
       xmlns:p="clr-namespace:System;assembly=mscorlib"
       xmlns:generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="400" d:DesignWidth="300"
 	Title="CertificateManager - View Certificates">
 
     <ScrollViewer Grid.Row="1">
@@ -72,9 +72,9 @@
         <Button x:Name ="ListCertButton" Content="List Certificates" Width="100" Height="25" Grid.Column="0" Grid.Row="6" Click ="ListCertButton_Click">
         </Button>
 
-        <DataGrid x:Name="CertDataGrid" IsReadOnly="True" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center" 
+            <DataGrid x:Name="CertDataGrid" PreviewKeyDown="Cert_PreviewKeyDown" IsReadOnly="False" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center" 
   VerticalAlignment="Center" AutoGenerateColumns="True">
-        </DataGrid>
+               </DataGrid>
     </Grid>
     </ScrollViewer>
 </Page>

@@ -8,6 +8,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Data;
+using System.Windows.Input;
+using CertificateManagerClient.CertificateWarehouseService;
+using DataGrid = System.Windows.Controls.DataGrid;
+using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
+using MessageBox = System.Windows.MessageBox;
 
 namespace CertificateManagerClient
 {
@@ -69,7 +75,7 @@ namespace CertificateManagerClient
             //hard-coded since Local User only works on the local machine
                 var storeLocation = StoreLocation.LocalMachine;
 
-            if (ServerName.Text != null)
+            if (ServerName.Text.Length > 3 && !ServerName.Text.Equals(""))
             {
                 serverName = ServerName.Text;
                  try
@@ -131,6 +137,37 @@ namespace CertificateManagerClient
             var grid = sender as DataGrid;
             if (grid != null) grid.ItemsSource = items;
         }
+    
+
+        private void Cert_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs keyEventArgs)
+        {
+            if (keyEventArgs.Key == Key.Delete)
+            {
+                var grid = (DataGrid)sender;
+                if (grid.SelectedItems.Count > 0)
+                {
+                    var Res = MessageBox.Show("Are you sure you want to delete " + grid.SelectedItems.Count + " Certificates?", "Deleting Records", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    if (Res == MessageBoxResult.Yes)
+                    {
+                        foreach (var row in grid.SelectedItems)
+                        {
+                            X509Certificate2 certificate2 = new X509Certificate2();
+                            /*
+                            Employee employee = row as Employee;
+                            context.Employees.Remove(employee);
+                             */
+                        }
+                        //context.SaveChanges();
+                        MessageBox.Show(grid.SelectedItems.Count + " Certificates have being deleted!");
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("Now what??");
+                    }
+                }
+            }
+        }
+
     }
     }
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Text;
@@ -15,9 +17,12 @@ namespace CertificateManagerClient
     /// </summary>
     public partial class AddCertificate : Page
     {
+        private X509Certificate2 _loadedCertificate = new X509Certificate2();
+
         public AddCertificate()
         {
             InitializeComponent();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -34,8 +39,21 @@ namespace CertificateManagerClient
 
             {
                 //load certificate from selected file
-                X509Certificate2 loadedCertificate = new X509Certificate2(ofd.FileName);
+                _loadedCertificate = new X509Certificate2(ofd.FileName);
                 System.Diagnostics.Debug.WriteLine("Reading Client Certificate Information");
+                //null check to make sure certificate was loaded, then populate form
+                if (_loadedCertificate.SubjectName.Name != null) CertName.Text = _loadedCertificate.SubjectName.Name;
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("Certificate Name was null, certificate not loaded correctly");
+                }
+                StartDate.Text = _loadedCertificate.NotBefore.ToLongDateString();
+                EndDate.Text = _loadedCertificate.NotAfter.ToLongDateString();
+                ExpirationDate.Text = _loadedCertificate.NotAfter.ToLongDateString();
+                Thumbprint.Text = _loadedCertificate.Thumbprint;
+                //try storing content this way (http://www.dotnetperls.com/convert-string-byte-array)
+                CertContent.Text = Encoding.ASCII.GetString(_loadedCertificate.RawData);
+                
             }
             catch (Exception ex)
             {
@@ -49,27 +67,61 @@ namespace CertificateManagerClient
             CertificateManagerService.CertificateManagerServiceClient
                  wsref = new CertificateManagerService.CertificateManagerServiceClient();
             string serverName = null;
-            Certificate certificate = new Certificate();
 
-            //try converting certificate content from text back to bytes (http://www.dotnetperls.com/convert-string-byte-array)
-            certificate.Content = Encoding.ASCII.GetBytes(CertContent.Text);
+            X509Certificate2 certificate2 = new X509Certificate2();
+            string newStoreName = null;
+            if (Store.SelectedItem != null)
+            {
+                int index = Store.SelectedIndex;
+                switch (index)
+                {
+                    case 0:
+                        {
+                            newStoreName = "CA";
+                            break;
+                        }
+                    case 1:
+                        {
+                            newStoreName = "My";
+                            break;
+                        }
+                    case 2:
+                        {
+                            newStoreName = "Root";
+                            break;
+                        }
+                    case 3:
+                        {
+                            newStoreName = "AuthRoot";
+                            break;
+                        }
+                    default:
+                        {
+                            newStoreName = "CA";
+                            break;
+                        }
+                }
+            }//end if
 
-    
-            string newStoreName = Store.SelectedItem.ToString();
-            X509Store store = new X509Store(newStoreName, StoreLocation.LocalMachine);
+            //else just make the default "CA"
+            else
+            {
+                newStoreName = "CA";
+            }
 
-
-            //create a new X509 certificate from the loaded content
-            X509Certificate2 certificate2 =
-                new X509Certificate2(certificate.Content);
+            
+            StoreLocation storeLocation = StoreLocation.LocalMachine;
+ 
 
             bool added = false;
-            if (ServerName.Text != null)
+            if (ServerName.Text.Length > 3 && !ServerName.Text.Equals(""))
             {
                 serverName = ServerName.Text;
                 try
                 {
-                    added = wsref.InstallCertificateRemote(store, certificate2, serverName);
+                    //pass in the loadedCertificate
+                    added = wsref.InstallCertificateRemote(newStoreName, storeLocation, _loadedCertificate, serverName);
+
                 }
                 catch (EndpointNotFoundException epnfe)
                 {
@@ -85,7 +137,7 @@ namespace CertificateManagerClient
                 System.Diagnostics.Debug.WriteLine("serverName is null!!");
                 try
                 {
-                    added = wsref.InstallCertificateLocal(store, certificate2);
+                    added = wsref.InstallCertificateLocal(newStoreName, storeLocation, _loadedCertificate);
                 }
                 catch (EndpointNotFoundException epnfe)
                 {
@@ -111,37 +163,39 @@ namespace CertificateManagerClient
             var serverName = (string)values[1];
             var myStoreName = (string) values[2];
         }
-
-        private void SaveCertButton_Click(object sender, RoutedEventArgs e)
-        {
-     //instantiate web service
-            CertificateWarehouseService.CertificateWarehouseServiceClient
-                wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
+        
+                private void SaveCertButton_Click(object sender, RoutedEventArgs e)
+                {
+             //instantiate web service
+                    CertificateWarehouseService.CertificateWarehouseServiceClient
+                        wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
             
-            //new CertificateManager Certificate
-            Certificate certificate = new Certificate();
-            //certificate.Name = CertName.Text;
-            //certificate.StartDate = Convert.ToDateTime(StartDate.Text);
-            //certificate.EndDate = Convert.ToDateTime(EndDate.Text);
-            //certificate.ExpirationDate = Convert.ToDateTime(ExpirationDate.Text);
-            //certificate.Thumbprint = Thumbprint.Text;
-            //try converting certificate content from text back to bytes (http://www.dotnetperls.com/convert-string-byte-array)
-            certificate.Content = Encoding.ASCII.GetBytes(CertContent.Text);
+                    //new CertificateManager Certificate
+                    Certificate certificate = new Certificate();
+                    //certificate.Name = CertName.Text;
+                    //certificate.StartDate = Convert.ToDateTime(StartDate.Text);
+                    //certificate.EndDate = Convert.ToDateTime(EndDate.Text);
+                    //certificate.ExpirationDate = Convert.ToDateTime(ExpirationDate.Text);
+                    //certificate.Thumbprint = Thumbprint.Text;
+                    //try converting certificate content from text back to bytes (http://www.dotnetperls.com/convert-string-byte-array)
+                    certificate.Content = Encoding.ASCII.GetBytes(CertContent.Text);
             
-        bool added = wsref.AddCertificateToDatabase(certificate);
+                bool added = wsref.AddCertificateToDatabase(certificate);
 
-            if (added)
-            {
-                System.Diagnostics.Debug.WriteLine("Certificate added!");
-                //System.Diagnostics.Debug.WriteLine("Certificate Thumbprint = {0}", certificate.Thumbprint);
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("Certificate not added :-( ");
-            }
+                    if (added)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Certificate added!");
+                        //System.Diagnostics.Debug.WriteLine("Certificate Thumbprint = {0}", certificate.Thumbprint);
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("Certificate not added :-( ");
+                    }
 
-        }
+                }
+         
     }
+
 
     public class MyCertificateProvider : IMultiValueConverter
 {

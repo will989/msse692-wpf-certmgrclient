@@ -67,7 +67,7 @@ namespace CertificateManagerClient
             //hard-coded since Local User only works on the local machine
                 var storeLocation = StoreLocation.LocalMachine;
 
-            if (ServerName.Text != null)
+            if (ServerName.Text.Length > 3 && !ServerName.Text.Equals(""))
             {
                 serverName = ServerName2.Text;
             }
@@ -76,7 +76,7 @@ namespace CertificateManagerClient
                 serverName = "7000Laptop";
             }
 
-            if (ServerName2.Text != null)
+            if (ServerName2.Text.Length < 3 || ServerName2.Text.Equals(""))
             {
                 serverName2 = ServerName2.Text;
             }
