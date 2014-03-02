@@ -47,57 +47,57 @@
         <Border BorderThickness="1" BorderBrush="Black" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0">
             <TextBlock>
          <Hyperlink>Certificate Report Page    
-             <Hyperlink.NavigateUri>CertificateReportPage.xaml</Hyperlink.NavigateUri>
+             <Hyperlink.NavigateUri>CertificateManagerPages\CertificateReportPage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
                <Hyperlink>     Add Certificate Page
-             <Hyperlink.NavigateUri>AddCertificate.xaml</Hyperlink.NavigateUri>
+             <Hyperlink.NavigateUri>CertificateManagerPages\AddCertificate.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
          <Hyperlink>      Expiring Certificate Report Page
-             <Hyperlink.NavigateUri>ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
+             <Hyperlink.NavigateUri>CertificateManagerPages\ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
          <Hyperlink>      Certificate Warehouse Report Page
-             <Hyperlink.NavigateUri>CertificateWarehouseReportPage.xaml</Hyperlink.NavigateUri>
+             <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseReportPage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
          <Hyperlink>      Certificate Warehouse Find Certificate Page
-             <Hyperlink.NavigateUri>CertificateWarehouseFindCertificatePage.xaml</Hyperlink.NavigateUri>
+             <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseFindCertificatePage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
             </TextBlock>
         </Border>
         <Label Name="CertificateManagerLabel" Content="Certificate Manager Links" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" ToolTip="Links for managing certificates in Windows Certificate Stores"></Label>
         <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
         <Hyperlink>Certificate Report Page
-            <Hyperlink.NavigateUri>CertificateReportPage.xaml</Hyperlink.NavigateUri>
+            <Hyperlink.NavigateUri>CertificateManagerPages\CertificateReportPage.xaml</Hyperlink.NavigateUri>
         </Hyperlink>
             </TextBlock>
          <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
         <Hyperlink>Add Certificate Page
-            <Hyperlink.NavigateUri>AddCertificate.xaml</Hyperlink.NavigateUri>
+            <Hyperlink.NavigateUri>CertificateManagerPages\AddCertificate.xaml</Hyperlink.NavigateUri>
         </Hyperlink>
              </TextBlock>
         <TextBlock Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2">
         <Hyperlink>Expiring Certificate Report Page
-            <Hyperlink.NavigateUri>ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
+            <Hyperlink.NavigateUri>CertificateManagerPages\ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
         </Hyperlink>
             </TextBlock>
         <TextBlock Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2">
         <Hyperlink>Compare Certificate Store Contents Page
-            <Hyperlink.NavigateUri>CompareCertificateStoreContentsPage.xaml</Hyperlink.NavigateUri>
+            <Hyperlink.NavigateUri>CertificateManagerPages\CompareCertificateStoreContentsPage.xaml</Hyperlink.NavigateUri>
         </Hyperlink>
         </TextBlock>
         <Label Name="CertificateWarehouseLabel" Content="Certificate Warehouse Links" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" ToolTip="Links for managing certificates in a repository"></Label>
         <TextBlock Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2">
                     <Hyperlink>Certificate Warehouse Report Page
-             <Hyperlink.NavigateUri>CertificateWarehouseReportPage.xaml</Hyperlink.NavigateUri>
+             <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseReportPage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
             </TextBlock>
         <TextBlock Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2">
          <Hyperlink>Certificate Warehouse Add Certificate Page
-             <Hyperlink.NavigateUri>CertificateWarehouseAddCertToDatabasePage.xaml</Hyperlink.NavigateUri>
+             <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseAddCertToDatabasePage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
         </TextBlock>
         <TextBlock Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2">
          <Hyperlink>Certificate Warehouse Find Certificate Page
-             <Hyperlink.NavigateUri>CertificateWarehouseFindCertificatePage.xaml</Hyperlink.NavigateUri>
+             <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseFindCertificatePage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
         </TextBlock>
     </Grid>

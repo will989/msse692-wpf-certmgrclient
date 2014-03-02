@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using CertificateManagerClient.CertificateWarehouseService;
 
-namespace CertificateManagerClient
+namespace CertificateManagerClient.CertificateWarehousePages
 {
     /// <summary>
     /// Interaction logic for CertificateManagerHome.xaml

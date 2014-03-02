@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using CertificateManagerClient.CertificateWarehouseService;
 
-namespace CertificateManagerClient
+namespace CertificateManagerClient.OrganizationPages
 {
     /// <summary>
     /// Interaction logic for Organization.xaml

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Text;
@@ -10,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using CertificateManagerClient.CertificateWarehouseService;
 
-namespace CertificateManagerClient
+namespace CertificateManagerClient.CertificateManagerPages
 {
     /// <summary>
     /// Interaction logic for AddCertificate.xaml

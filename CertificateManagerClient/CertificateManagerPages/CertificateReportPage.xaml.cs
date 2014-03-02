@@ -1,21 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Data;
 using System.Windows.Input;
-using CertificateManagerClient.CertificateWarehouseService;
-using DataGrid = System.Windows.Controls.DataGrid;
-using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
-using MessageBox = System.Windows.MessageBox;
 
-namespace CertificateManagerClient
+namespace CertificateManagerClient.CertificateManagerPages
 {
     /// <summary>
     /// Interaction logic for CertificateReportPage.xaml

@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 
-namespace CertificateManagerClient
+namespace CertificateManagerClient.CertificateManagerPages
 {
     /// <summary>
     /// Interaction logic for CertificateReportPage.xaml

@@ -1,4 +1,4 @@
-﻿<Page x:Class="CertificateManagerClient.CertificateReportPage"
+﻿<Page x:Class="CertificateManagerClient.CertificateManagerPages.CertificateReportPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -36,13 +36,13 @@
                     <!-- Note: In order to preserve aspect ratio, only set either DecodePixelWidth
          or DecodePixelHeight but not both. -->
                     <BitmapImage DecodePixelWidth="200"  
-     UriSource="Images\hero-fpo-about.jpg" />
+     UriSource="..\Images\hero-fpo-about.jpg" />
                 </Image.Source>
                 </Image>
             <Border BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0">
                 <TextBlock>
-         <Hyperlink>Certificate Report Page    
-             <Hyperlink.NavigateUri>CertificateReportPage.xaml</Hyperlink.NavigateUri>
+         <Hyperlink>Certificate Manager Home    
+             <Hyperlink.NavigateUri>..\CertificateManagerHome.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
                <Hyperlink>     Add Certificate Page
              <Hyperlink.NavigateUri>AddCertificate.xaml</Hyperlink.NavigateUri>

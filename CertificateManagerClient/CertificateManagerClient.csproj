@@ -85,34 +85,37 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Compile Include="AddCertificate.xaml.cs">
-      <DependentUpon>AddCertificate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CertificateManagerClientHome.xaml.cs">
       <DependentUpon>CertificateManagerClientHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CertificateWarehouseAddCertToDatabasePage.xaml.cs">
-      <DependentUpon>CertificateWarehouseAddCertToDatabasePage.xaml</DependentUpon>
+    <Compile Include="CertificateManagerPages\AddCertificate.xaml.cs">
+      <DependentUpon>AddCertificate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CompareCertificateStoreContentsPage.xaml.cs">
+    <Compile Include="CertificateManagerPages\CertificateReportPage.xaml.cs">
+      <DependentUpon>CertificateReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CertificateManagerPages\CompareCertificateStoreContentsPage.xaml.cs">
       <DependentUpon>CompareCertificateStoreContentsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CertificateWarehouseFindCertificatePage.xaml.cs">
-      <DependentUpon>CertificateWarehouseFindCertificatePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CertificateWarehouseReportPage.xaml.cs">
-      <DependentUpon>CertificateWarehouseReportPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CertificateWarehouseExpiringCertificateReportPage.xaml.cs">
-      <DependentUpon>CertificateWarehouseExpiringCertificateReportPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ExpiringCertificateReportPage.xaml.cs">
+    <Compile Include="CertificateManagerPages\ExpiringCertificateReportPage.xaml.cs">
       <DependentUpon>ExpiringCertificateReportPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OrganizationPage.xaml.cs">
-      <DependentUpon>OrganizationPage.xaml</DependentUpon>
+    <Compile Include="CertificateWarehousePages\CertificateWarehouseAddCertToDatabasePage.xaml.cs">
+      <DependentUpon>CertificateWarehouseAddCertToDatabasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CertificateWarehousePages\CertificateWarehouseExpiringCertificateReportPage.xaml.cs">
+      <DependentUpon>CertificateWarehouseExpiringCertificateReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CertificateWarehousePages\CertificateWarehouseFindCertificatePage.xaml.cs">
+      <DependentUpon>CertificateWarehouseFindCertificatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CertificateWarehousePages\CertificateWarehouseReportPage.xaml.cs">
+      <DependentUpon>CertificateWarehouseReportPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrganizationBuilder.cs" />
+    <Compile Include="OrganizationPages\OrganizationPage.xaml.cs">
+      <DependentUpon>OrganizationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service References\CertificateManagerService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,15 +127,23 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="TestUtilities\CreateCertificate.cs" />
-    <Page Include="AddCertificate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="CertificateManagerClientHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CertificateWarehouseAddCertToDatabasePage.xaml">
+    <Page Include="CertificateManagerPages\AddCertificate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CertificateManagerPages\CertificateReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CertificateManagerPages\CompareCertificateStoreContentsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CertificateManagerPages\ExpiringCertificateReportPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -155,39 +166,28 @@
       <DependentUpon>CertificateManagerMainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="CompareCertificateStoreContentsPage.xaml">
+    <Page Include="CertificateWarehousePages\CertificateWarehouseAddCertToDatabasePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CertificateWarehouseFindCertificatePage.xaml">
+    <Page Include="CertificateWarehousePages\CertificateWarehouseExpiringCertificateReportPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CertificateWarehouseReportPage.xaml">
+    <Page Include="CertificateWarehousePages\CertificateWarehouseFindCertificatePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CertificateWarehouseExpiringCertificateReportPage.xaml">
+    <Page Include="CertificateWarehousePages\CertificateWarehouseReportPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ExpiringCertificateReportPage.xaml">
+    <Page Include="OrganizationPages\OrganizationPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="CertificateReportPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OrganizationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CertificateReportPage.xaml.cs">
-      <DependentUpon>CertificateReportPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -318,10 +318,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CertificateManagerPages\" />
-    <Folder Include="CertificateWarehousePages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\hero-fpo-about.jpg" />
   </ItemGroup>
