@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:53407/CertificateWarehouseService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://win-iv85psjvcob/CertificateWarehouseService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CertificateWarehouse.wsdl" MetadataType="Wsdl" ID="27b8c9ec-6f87-4eb6-b0b5-551dc9f90332" SourceId="1" SourceUrl="http://localhost:53407/CertificateWarehouseService.svc?wsdl" />
-    <MetadataFile FileName="CertificateWarehouseService.xsd" MetadataType="Schema" ID="682a425e-5dbf-4282-88ef-c0bf26147211" SourceId="1" SourceUrl="http://localhost:53407/CertificateWarehouseService.svc?xsd=xsd3" />
-    <MetadataFile FileName="CertificateWarehouseService1.xsd" MetadataType="Schema" ID="86ad6bbf-3e0b-43d1-9112-2536e77ecd4d" SourceId="1" SourceUrl="http://localhost:53407/CertificateWarehouseService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CertificateWarehouseService2.xsd" MetadataType="Schema" ID="ce4d37c2-d1c2-4b66-9ad9-e88cf3849296" SourceId="1" SourceUrl="http://localhost:53407/CertificateWarehouseService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CertificateWarehouseService.disco" MetadataType="Disco" ID="bffcb7db-359d-413a-ab6a-beb5fb455f71" SourceId="1" SourceUrl="http://localhost:53407/CertificateWarehouseService.svc?disco" />
-    <MetadataFile FileName="CertificateWarehouseService3.xsd" MetadataType="Schema" ID="57affdf1-2afb-40c0-9ce6-8e92a872e3ae" SourceId="1" SourceUrl="http://localhost:53407/CertificateWarehouseService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CertificateWarehouseService4.xsd" MetadataType="Schema" ID="99cabb3b-ddbc-4f85-acf7-f601a191383b" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CertificateWarehouse1.wsdl" MetadataType="Wsdl" ID="31e28825-2166-4f6b-ac77-8608dc174ed7" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?wsdl" />
+    <MetadataFile FileName="CertificateWarehouseService41.xsd" MetadataType="Schema" ID="ed5ba04b-509b-44b1-aae5-2cc9216d9f6a" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CertificateWarehouseService42.xsd" MetadataType="Schema" ID="d0392e48-1f30-464a-9cd8-7d422ac695d0" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CertificateWarehouseService1.disco" MetadataType="Disco" ID="6133211e-8aee-4eff-8732-afa20668805e" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?disco" />
+    <MetadataFile FileName="CertificateWarehouseService43.xsd" MetadataType="Schema" ID="bdb8bd65-cda3-478c-8161-6e3c2af9a53e" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

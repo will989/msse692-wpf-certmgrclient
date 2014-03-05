@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:53407/CertificateManagerService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://win-iv85psjvcob/CertificateManagerService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CertificateManagerService.xsd" MetadataType="Schema" ID="f1bbe148-4584-4ecb-beff-7bea67d3a096" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CertificateManagerService1.xsd" MetadataType="Schema" ID="8a4b6540-ee3c-40ed-b2cf-3f92bf30d3d5" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?xsd=xsd3" />
-    <MetadataFile FileName="CertificateManagerService2.xsd" MetadataType="Schema" ID="3d514df0-137e-4b57-bde4-d6a7e7271316" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CertificateManagerService3.xsd" MetadataType="Schema" ID="cff09318-b864-423f-8e1b-8370a28f54e9" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CertificateManagerService.wsdl" MetadataType="Wsdl" ID="8723ff9d-5602-41ca-9f52-98e9fe37ea20" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?wsdl" />
-    <MetadataFile FileName="CertificateManagerService.disco" MetadataType="Disco" ID="4a33a51d-622c-49af-a204-816336c81703" SourceId="1" SourceUrl="http://localhost:53407/CertificateManagerService.svc?disco" />
+    <MetadataFile FileName="CertificateManagerService4.xsd" MetadataType="Schema" ID="e4569131-0717-4991-92fe-d53af969d6df" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateManagerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CertificateManagerService41.xsd" MetadataType="Schema" ID="fa921e1b-e9d6-45ed-8f13-13ce9c77df6b" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateManagerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CertificateManagerService42.xsd" MetadataType="Schema" ID="8557c1c9-fd4b-4f3f-bd83-920cfc0f9873" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateManagerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CertificateManagerService43.xsd" MetadataType="Schema" ID="db92af26-3fbf-459b-ac2c-baee0b6bd3e7" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateManagerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CertificateManagerService1.disco" MetadataType="Disco" ID="f43d1613-2019-4493-b29f-aac0faa77255" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateManagerService.svc?disco" />
+    <MetadataFile FileName="CertificateManagerService1.wsdl" MetadataType="Wsdl" ID="9545f149-3e6a-4f5c-ac82-c3d252800459" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateManagerService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

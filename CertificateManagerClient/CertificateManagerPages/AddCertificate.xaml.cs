@@ -62,8 +62,13 @@ namespace CertificateManagerClient.CertificateManagerPages
         private void AddCertButton_Click(object sender, RoutedEventArgs e)
         {
             //instantiate web service
-            CertificateManagerService.CertificateManagerServiceClient
-                 wsref = new CertificateManagerService.CertificateManagerServiceClient();
+            //CertificateManagerService.CertificateManagerServiceClient
+            //     wsref = new CertificateManagerService.CertificateManagerServiceClient();
+
+
+            //instantiate windows service
+            CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+
             string serverName = null;
 
             X509Certificate2 certificate2 = new X509Certificate2();
@@ -165,8 +170,11 @@ namespace CertificateManagerClient.CertificateManagerPages
                 private void SaveCertButton_Click(object sender, RoutedEventArgs e)
                 {
              //instantiate web service
-                    CertificateWarehouseService.CertificateWarehouseServiceClient
-                        wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
+              //      CertificateWarehouseService.CertificateWarehouseServiceClient
+                //        wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
+
+                    //instantiate windows service
+                    CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
             
                     //new CertificateManager Certificate
                     Certificate certificate = new Certificate();
@@ -177,8 +185,9 @@ namespace CertificateManagerClient.CertificateManagerPages
                     //certificate.Thumbprint = Thumbprint.Text;
                     //try converting certificate content from text back to bytes (http://www.dotnetperls.com/convert-string-byte-array)
                     certificate.Content = Encoding.ASCII.GetBytes(CertContent.Text);
-            
-                bool added = wsref.AddCertificateToDatabase(certificate);
+
+                    //hard-coding because I'm not using this database stuff on this page
+                    bool added = true; //wsref.AddCertificateToDatabase(certificate);
 
                     if (added)
                     {

@@ -19,9 +19,11 @@
     <TargetZone>Internet</TargetZone>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>True</SignManifests>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/</PublishUrl>
     <Install>false</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -29,12 +31,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>false</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -115,6 +118,11 @@
     <Compile Include="OrganizationBuilder.cs" />
     <Compile Include="OrganizationPages\OrganizationPage.xaml.cs">
       <DependentUpon>OrganizationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CalculatorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\CertificateManagerService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -215,48 +223,44 @@
     </None>
     <None Include="Properties\app.manifest" />
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\CalculatorService\CalculatorService.wsdl" />
+    <None Include="Service References\CalculatorService\service.wsdl" />
+    <None Include="Service References\CalculatorService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CalculatorService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CalculatorService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\CertificateManagerService\CertificateManagerClient.CertificateManagerService.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService.wsdl" />
-    <None Include="Service References\CertificateManagerService\CertificateManagerService.xsd">
+    <None Include="Service References\CertificateManagerService\CertificateManagerService1.wsdl" />
+    <None Include="Service References\CertificateManagerService\CertificateManagerService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService1.xsd">
+    <None Include="Service References\CertificateManagerService\CertificateManagerService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService2.xsd">
+    <None Include="Service References\CertificateManagerService\CertificateManagerService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService3.xsd">
+    <None Include="Service References\CertificateManagerService\CertificateManagerService43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CertificateWarehouseService\CertificateManagerClient.CertificateWarehouseService.Certificate.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouse.wsdl" />
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService3.xsd">
-      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CalculatorService\" />
     <WCFMetadataStorage Include="Service References\CertificateManagerService\" />
     <WCFMetadataStorage Include="Service References\CertificateWarehouseService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CertificateManagerService\configuration91.svcinfo" />
@@ -271,9 +275,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService.disco" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouse1.wsdl" />
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\CertificateWarehouseService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -318,9 +332,29 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Service References\CertificateManagerService\CertificateManagerService1.disco" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\hero-fpo-about.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CalculatorService\service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CalculatorService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CalculatorService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CalculatorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <StartArguments />
