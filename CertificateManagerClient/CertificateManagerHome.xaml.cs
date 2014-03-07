@@ -6,6 +6,8 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using CertificateManagerClient.CertificateWarehouseService;
 
+//Here is the once-per-application setup information
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 namespace CertificateManagerClient
 {
     /// <summary>
@@ -16,7 +18,10 @@ namespace CertificateManagerClient
         public CertificateManagerHome()
         {
             InitializeComponent();
+            log.Debug("Initializing app");
             
         }
+        //Here is the once-per-class call to initialize the log object
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
        }
     }

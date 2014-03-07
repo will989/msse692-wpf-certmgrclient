@@ -33,7 +33,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -59,6 +59,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio 12.0\Common7\IDE\log4net-1.2.13\bin\net\4.0\release\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CSharpDriver-1.7.0.4714\MongoDB.Bson.dll</HintPath>
     </Reference>
@@ -213,7 +216,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="CertificateManagerClient_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Security.Cryptography.X509Certificates.X509Certificate2.datasource" />
@@ -223,15 +228,15 @@
     </None>
     <None Include="Properties\app.manifest" />
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\CalculatorService\CalculatorService.wsdl" />
-    <None Include="Service References\CalculatorService\service.wsdl" />
-    <None Include="Service References\CalculatorService\service.xsd">
+    <None Include="Service References\CalculatorService\Microsoft.ServiceModel.Samples.wsdl" />
+    <None Include="Service References\CalculatorService\Microsoft.ServiceModel.Samples.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CalculatorService\service1.xsd">
+    <None Include="Service References\CalculatorService\service1.wsdl" />
+    <None Include="Service References\CalculatorService\service3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CalculatorService\service2.xsd">
+    <None Include="Service References\CalculatorService\System.Security.Cryptography.X509Certificates.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CertificateManagerService\CertificateManagerClient.CertificateManagerService.CompositeType.datasource">
@@ -340,9 +345,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CalculatorService\service.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CalculatorService\configuration91.svcinfo" />

@@ -18,15 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8000/ServiceModelSamples/service" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="fb881a77-ccaf-4d8f-9003-6846073fcbc4" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?wsdl=wsdl0" />
-    <MetadataFile FileName="service.disco" MetadataType="Disco" ID="db883d9e-8b87-483a-8e45-f10ed01ecac6" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?disco" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="2f07e930-9b4b-4c6c-9baa-896433726392" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?xsd=xsd1" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c8798a74-70df-4e2c-a871-7417e2aed481" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?xsd=xsd0" />
-    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="72fd1e1e-9be3-4539-ae08-28a4ba536304" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?xsd=xsd2" />
-    <MetadataFile FileName="CalculatorService.wsdl" MetadataType="Wsdl" ID="62f0ede5-76e0-4134-8659-f5ebd8d45015" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?wsdl" />
+    <MetadataFile FileName="Microsoft.ServiceModel.Samples.wsdl" MetadataType="Wsdl" ID="bd65cd60-c1fa-4442-8451-de08e861ecf3" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="021eebfb-10ff-4af8-bd35-5cc4282a231a" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
+    <MetadataFile FileName="Microsoft.ServiceModel.Samples.xsd" MetadataType="Schema" ID="57ea50f6-f9fe-4e1c-9cfd-83da248994b9" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
+    <MetadataFile FileName="service3.xsd" MetadataType="Schema" ID="b75ab366-5a76-493e-a64d-d38766a19e4b" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
+    <MetadataFile FileName="System.Security.Cryptography.X509Certificates.xsd" MetadataType="Schema" ID="a47e8263-62ce-4155-bb1f-d60074f48986" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

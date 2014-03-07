@@ -6,7 +6,9 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using CertificateManagerClient.CertificateManagerService;
 using CertificateManagerClient.CertificateWarehouseService;
+
 
 namespace CertificateManagerClient.CertificateManagerPages
 {
@@ -15,11 +17,14 @@ namespace CertificateManagerClient.CertificateManagerPages
     /// </summary>
     public partial class AddCertificate : Page
     {
+        //Here is the once-per-class call to initialize the log object
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private X509Certificate2 _loadedCertificate = new X509Certificate2();
 
         public AddCertificate()
         {
             InitializeComponent();
+            log.Debug("In AddCertificate");
             
         }
 
@@ -68,6 +73,9 @@ namespace CertificateManagerClient.CertificateManagerPages
 
             //instantiate windows service
             CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+
+            //instantiate windows service  -- this gives "The type name 'CertManagerSvc' does not exist in the type... error
+            //CertManagerSvc.CertificateManagerClient wsref = new CertManagerSvc.CertificateManagerClient();
 
             string serverName = null;
 
@@ -123,15 +131,18 @@ namespace CertificateManagerClient.CertificateManagerPages
                 try
                 {
                     //pass in the loadedCertificate
+                    log.Debug("just before added");
                     added = wsref.InstallCertificateRemote(newStoreName, storeLocation, _loadedCertificate, serverName);
-
+                    log.Debug("just after added");
                 }
                 catch (EndpointNotFoundException epnfe)
                 {
                     System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
+                    log.Error("Caught EndpointNotFoundException: {0}", epnfe);
                 }
                 catch (Exception ex)
                 {
+                    log.Error("Caught Exception: {0}", ex);
                     System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
                 }
             }
@@ -140,14 +151,19 @@ namespace CertificateManagerClient.CertificateManagerPages
                 System.Diagnostics.Debug.WriteLine("serverName is null!!");
                 try
                 {
+                    //pass in the loadedCertificate
+                    log.Debug("just before added");
                     added = wsref.InstallCertificateLocal(newStoreName, storeLocation, _loadedCertificate);
+                    log.Debug("just after added");
                 }
                 catch (EndpointNotFoundException epnfe)
                 {
+                    log.Error("Caught EndpointNotFoundException: {0}", epnfe);
                     System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
                 }
                 catch (Exception ex)
                 {
+                    log.Error("Caught Exception: {0}", ex);
                     System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
                 }
             }
@@ -155,6 +171,13 @@ namespace CertificateManagerClient.CertificateManagerPages
             if (added)
             {
                 System.Diagnostics.Debug.WriteLine("Certificate was added");
+                log.Debug("Added is True, certificate was added!");
+            }
+            else
+            {
+                {
+                    log.Debug("Added is false");
+                }
             }
         }
 
@@ -175,6 +198,8 @@ namespace CertificateManagerClient.CertificateManagerPages
 
                     //instantiate windows service
                     CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+                    //CertManagerSvc.CertificateManagerClient wsref = new CertManagerSvc.CertificateManagerClient();
+
             
                     //new CertificateManager Certificate
                     Certificate certificate = new Certificate();
