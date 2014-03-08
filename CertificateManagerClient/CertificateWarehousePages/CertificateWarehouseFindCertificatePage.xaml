@@ -31,8 +31,8 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
             <Image Width="300">
                 <Image.Source>
@@ -64,14 +64,14 @@
                 </TextBlock>
             </Border>
 
-            <Label Name="ThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" ToolTip="The thumbprint of the certificate we wish to find"></Label>
-            <TextBox Name="Thumbprint" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="ThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" ToolTip="The thumbprint of the certificate we wish to find"></Label>
+            <TextBox Name="Thumbprint" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
-            <Label Name="CertNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" ToolTip="The name of the certificate we want to find."></Label>
-            <TextBox Name="CertName" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="CertNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" ToolTip="The name of the certificate we want to find."></Label>
+            <TextBox Name="CertName" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
-            <Label Name="MongoIdLabel" Content="Mongo Id of Certificate" Margin="5" Grid.Column="1" Grid.Row="4" Visibility="Visible" ToolTip="The Mongo _id property as a string."></Label>
-            <TextBox Name="MongoId" Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="MongoIdLabel" Content="Mongo Id of Certificate" Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Visible" ToolTip="The Mongo _id property as a string."></Label>
+            <TextBox Name="MongoId" Margin="5" Grid.Column="1" Grid.Row="4" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
 
             <Button x:Name ="FindCertButton" Content="Find Certificate" Width="100" Height="25" Grid.Column="0" Grid.Row="6" Click ="FindCertButton_Click">
@@ -90,15 +90,15 @@
                     <ColumnDefinition Width="500"/>
                     <ColumnDefinition Width="500"/>
                 </Grid.ColumnDefinitions>
-                <Label Name="CertificateDetailsLabel" Content="Found Certificate Details" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2"></Label>
-                <Label Name="CertificateNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="1" Grid.Row="1" Visibility="Visible"></Label>
-                <Label Name= "CertificateNameTextBox" Content="{Binding Path=Name}" Grid.Column="0" Grid.Row="1"></Label>
-                <Label Name="CertificateThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible"></Label>
-                <Label Name= "CertificateThumbprintTextBox" Content="{Binding Path=Thumbprint}" Grid.Column="0" Grid.Row="2" />
-                <Label Name="CertificateStartDtLabel" Content="Start Date of Certificate" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible"></Label>
-                <Label Name="CertificateStartDtTextBox"  Content="{Binding Path=StartDate}" Grid.Column="0" Grid.Row="3"></Label>
-                <Label Name="CertificateExpDtLabel" Content="Expiration Date of Certificate" Margin="5" Grid.Column="1" Grid.Row="4" Visibility="Visible"></Label>
-                <Label Name="CertificateExpDtTextBox" Content="{Binding Path=ExpirationDate}" Grid.Column="0" Grid.Row="4" />
+                <Label Name="CertificateDetailsLabel" Content="Found Certificate Details" FontWeight="Bold" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2"></Label>
+                <Label Name="CertificateNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="0" Grid.Row="1" Visibility="Visible"></Label>
+                <Label Name= "CertificateNameTextBox" Content="{Binding Path=Name}" Grid.Column="1" Grid.Row="1"></Label>
+                <Label Name="CertificateThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible"></Label>
+                <Label Name= "CertificateThumbprintTextBox" Content="{Binding Path=Thumbprint}" Grid.Column="1" Grid.Row="2" />
+                <Label Name="CertificateStartDtLabel" Content="Start Date of Certificate" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible"></Label>
+                <Label Name="CertificateStartDtTextBox"  Content="{Binding Path=StartDate}" Grid.Column="1" Grid.Row="3"></Label>
+                <Label Name="CertificateExpDtLabel" Content="Expiration Date of Certificate" Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Visible"></Label>
+                <Label Name="CertificateExpDtTextBox" Content="{Binding Path=ExpirationDate}" Grid.Column="1" Grid.Row="4" />
                
             </Grid>
         </Grid>

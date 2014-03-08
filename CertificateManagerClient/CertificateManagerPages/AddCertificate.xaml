@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:certificateManagerClient="clr-namespace:CertificateManagerClient"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="300"
 	Title="AddCertificate">
@@ -34,8 +35,8 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="400"/>
             </Grid.ColumnDefinitions>
         <Image Width="300">
             <Image.Source>
@@ -67,30 +68,35 @@
         <TextBlock Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
             <Label Name ="TitleLabel" FontSize="16" Content="Add a Certificate to a Certificate Store"/>
         </TextBlock>
-        <TextBox Name="CertChooser" Grid.Column="0" Grid.Row="5" FontSize="12" Text=""></TextBox>
-        <Button Content="Choose certificate" Width="100" Height="25" Click="Button_Click" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Margin="5"/>
+        <TextBox Name="CertChooser" Grid.Column="1" Grid.Row="5" FontSize="12" Text=""></TextBox>
+        <Button Content="* Choose certificate" Width="125" Height="25" FontWeight="Bold" Click="Button_Click" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Margin="5"/>
 
-        <Label Name="ServerLabel" Content="Server Name" Margin="5" Grid.Column="1" Grid.Row="6" Visibility="Visible" ToolTip="Which server to install certificate on"></Label>
-        <TextBox Name="ServerName" Margin="5" Grid.Column="0" Grid.Row="6" Visibility="Visible" FontSize="11" Text=""></TextBox>
+        <Label Name="ServerLabel" Content=" * Server Name" Margin="5" Grid.Column="0" Grid.Row="6" Visibility="Visible" FontWeight="Bold" ToolTip="Which server to install certificate on"></Label>
+            <TextBox Text="{Binding UpdateSourceTrigger=PropertyChanged, Mode=OneWay, ValidatesOnDataErrors=True}" Name="ServerName" Margin="5" Grid.Column="1" Grid.Row="6" Visibility="Visible" FontSize="11">
+                <Validation.ErrorTemplate>
+                <ControlTemplate>
+                </ControlTemplate>
+                </Validation.ErrorTemplate>
+                </TextBox>
 
-        <Label Name="StoreLabel" Content="Certificate Store" Visibility="Visible" Margin="5" Grid.Column="1" Grid.Row="7" ToolTip="Which store to install certificate into"></Label>
-        <ListBox Name="Store" Margin="5" Grid.Column="0" SelectedIndex="0" Visibility="Visible" Grid.Row="7" FontSize="12">
+        <Label Name="StoreLabel" Content="* Certificate Store" Visibility="Visible" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="7" ToolTip="Which store to install certificate into"></Label>
+        <ListBox Name="Store" Margin="5" Grid.Column="1" SelectedIndex="0" Visibility="Visible" Grid.Row="7" FontSize="12">
             <ListBoxItem Content="CA"></ListBoxItem>
             <ListBoxItem Content="MY"></ListBoxItem>
             <ListBoxItem Content="ROOT"></ListBoxItem>
             <ListBoxItem Content="TRUST"></ListBoxItem>
         </ListBox>
 
-        <TextBox Name="CertName" Margin="5" Grid.Column="0" Grid.Row="11" FontSize="12" Text=""></TextBox>
-        <Label Name="CertNameLabel" Content="Certificate Name" Margin="5" Grid.Column="1" Grid.Row="11" ToolTip="The certificate name from the SubjectName.Name attribute"></Label>
-        <TextBox Name="StartDate" Margin="5" Grid.Column="0" Grid.Row="12" FontSize="12" Text=""></TextBox>
-        <Label Name="StartDateLabel" Content="Start Date" Margin="5" Grid.Column="1" Grid.Row="12" ToolTip="The certificate's start date from the NotBefore attribute" RenderTransformOrigin="0.559,-0.532"></Label>
-        <TextBox Name="EndDate" Margin="5" Grid.Column="0" Grid.Row="13" FontSize="12" Text=""></TextBox>
-        <Label Name="EndDateLabel" Content="End Date" Margin="5" Grid.Column="1" Grid.Row="13" ToolTip="The certificate's end date, generally from the NotAfter attribute"></Label>
-        <TextBox Name="ExpirationDate" Margin="5" Grid.Column="0" Grid.Row="14" FontSize="12" Text=""></TextBox>
-        <Label Name="ExpirationDateLabel" Content="Expiration Date" Margin="5" Grid.Column="1" Grid.Row="14" ToolTip="The certificate's end date, from the NotAfter attribute"></Label>
-        <TextBox Name="Thumbprint" Margin="5" Grid.Column="0" Grid.Row="15" FontSize="12" Text=""></TextBox>
-        <Label Name="ThumbprintLabel" Content="Certificate Thumbprint" Margin="5" Grid.Column="1" Grid.Row="15" ToolTip="The certificate's thumbprint"></Label>
+        <TextBox Name="CertName" Margin="5" Grid.Column="1" Grid.Row="11" FontSize="12" Text=""></TextBox>
+        <Label Name="CertNameLabel" Content="Certificate Name" Margin="5" Grid.Column="0" Grid.Row="11" ToolTip="The certificate name from the SubjectName.Name attribute"></Label>
+        <TextBox Name="StartDate" Margin="5" Grid.Column="1" Grid.Row="12" FontSize="12" Text=""></TextBox>
+        <Label Name="StartDateLabel" Content="Start Date" Margin="5" Grid.Column="0" Grid.Row="12" ToolTip="The certificate's start date from the NotBefore attribute" RenderTransformOrigin="0.559,-0.532"></Label>
+        <TextBox Name="EndDate" Margin="5" Grid.Column="1" Grid.Row="13" FontSize="12" Text=""></TextBox>
+        <Label Name="EndDateLabel" Content="End Date" Margin="5" Grid.Column="0" Grid.Row="13" ToolTip="The certificate's end date, generally from the NotAfter attribute"></Label>
+        <TextBox Name="ExpirationDate" Margin="5" Grid.Column="1" Grid.Row="14" FontSize="12" Text=""></TextBox>
+        <Label Name="ExpirationDateLabel" Content="Expiration Date" Margin="5" Grid.Column="0" Grid.Row="14" ToolTip="The certificate's end date, from the NotAfter attribute"></Label>
+        <TextBox Name="Thumbprint" Margin="5" Grid.Column="1" Grid.Row="15" FontSize="12" Text=""></TextBox>
+        <Label Name="ThumbprintLabel" Content="Certificate Thumbprint" Margin="5" Grid.Column="0" Grid.Row="15" ToolTip="The certificate's thumbprint"></Label>
 
 
         <Button x:Name ="AddCertButton" Content="Add Certificate" Width="100" Height="25" Grid.Column="0" Grid.Row="16" Click ="AddCertButton_Click">

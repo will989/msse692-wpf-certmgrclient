@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Media;
 using CertificateManagerClient.CertificateManagerService;
 using CertificateManagerClient.CertificateWarehouseService;
 
@@ -15,6 +16,7 @@ namespace CertificateManagerClient.CertificateManagerPages
     /// <summary>
     /// Interaction logic for AddCertificate.xaml
     /// </summary>
+    
     public partial class AddCertificate : Page
     {
         //Here is the once-per-class call to initialize the log object
@@ -25,7 +27,7 @@ namespace CertificateManagerClient.CertificateManagerPages
         {
             InitializeComponent();
             log.Debug("In AddCertificate");
-            
+         
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -241,5 +243,7 @@ namespace CertificateManagerClient.CertificateManagerPages
         {
             throw new NotImplementedException();
         }
-}
+
+    }
+ 
 }

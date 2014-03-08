@@ -27,7 +27,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Image Width="300">
@@ -57,23 +57,23 @@
             </TextBlock>
         </Border>
 
-        <Label Name="ServerLabel" Content="Server Name" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" ToolTip="Which server to install certificate on"></Label>
-        <TextBox Name="ServerName" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
+        <Label Name="ServerLabel" Content="* Server Name" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" ToolTip="Which server to install certificate on"></Label>
+        <TextBox Name="ServerName" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
         
-        <Label Name="CertStoreLocationLabel" Content="Certificate Store Location" Margin="5" Grid.Column="1" Grid.Row="4" Visibility="Visible" ToolTip="The certificate store location (LocalComputer)"></Label>
-        <RadioButton GroupName="Location" Content="Local Computer" IsChecked="True" Grid.Column="0" Grid.Row="4"/>
-        <RadioButton GroupName="Location" Content="Local User" Grid.Column="0" Grid.Row="5"/>
+        <Label Name="CertStoreLocationLabel" Content="Certificate Store Location" Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Visible" ToolTip="The certificate store location (LocalComputer)"></Label>
+        <RadioButton GroupName="Location" Content="Local Computer" IsChecked="True" Grid.Column="1" Grid.Row="4"/>
+        <RadioButton GroupName="Location" Content="Local User" FontWeight="ExtraLight" Grid.Column="1" Grid.Row="5" ToolTip="Local User is only valid on the server that the service is running on."/>
 
-        <Label Name="StoreLabel" Content="Certificate Store" Visibility="Visible" Margin="5" Grid.Column="1" Grid.Row="6" ToolTip="Which store to install certificate into"></Label>
-        <ListBox Name="Store" Margin="5" Grid.Column="0" Visibility="Visible" Grid.Row="6" FontSize="12">
+        <Label Name="StoreLabel" Content="* Certificate Store" Visibility="Visible" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="6" ToolTip="Which store to install certificate into"></Label>
+        <ListBox Name="Store" Margin="5" Grid.Column="1" SelectedIndex="1" Visibility="Visible" Grid.Row="6" FontSize="12">
             <ListBoxItem Content="CA"></ListBoxItem>
             <ListBoxItem Content="MY"></ListBoxItem>
             <ListBoxItem Content="ROOT"></ListBoxItem>
             <ListBoxItem Content="TRUST"></ListBoxItem>
         </ListBox>
 
-        <Label Name="ExpCertDaysLabel" Content="Certificates Expiring Within...Days" Margin="5" Grid.Column="1" Grid.Row="7" Visibility="Visible" ToolTip="Find certificates that expire within this number days"></Label>
-        <TextBox Name="ExpCertDays" Margin="5" Grid.Column="0" Grid.Row="7" Visibility="Visible" FontSize="11" Text=""></TextBox>
+        <Label Name="ExpCertDaysLabel" Content="* Certificates Expiring Within...Days" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="7" Visibility="Visible" ToolTip="Find certificates that expire within this number days"></Label>
+        <TextBox Name="ExpCertDays" Margin="5" Grid.Column="1" Grid.Row="7" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
 
         <Button x:Name ="ListExpCertButton" Content="Get Expiring Certificates" Width="250" Height="25" Grid.Column="0" Grid.Row="8" Click ="ListCertButton_Click">

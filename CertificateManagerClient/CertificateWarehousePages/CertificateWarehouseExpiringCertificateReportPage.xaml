@@ -27,8 +27,8 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <Image Width="300">
             <Image.Source>
@@ -58,8 +58,8 @@
         </Border>
 
         
-        <Label Name="ExpCertDaysLabel" Content="Certificates Expiring Within...Days" Margin="5" Grid.Column="1" Grid.Row="7" Visibility="Visible" ToolTip="Find certificates that expire within this number days"></Label>
-        <TextBox Name="ExpCertDays" Margin="5" Grid.Column="0" Grid.Row="7" Visibility="Visible" FontSize="11" Text=""></TextBox>
+        <Label Name="ExpCertDaysLabel" Content="* Certificates Expiring Within...Days" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="7" Visibility="Visible" ToolTip="Find certificates that expire within this number days"></Label>
+        <TextBox Name="ExpCertDays" Margin="5" Grid.Column="1" Grid.Row="7" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
 
         <Button x:Name ="ListExpCertButton" Content="Get Expiring Certificates" Width="250" Height="25" Grid.Column="0" Grid.Row="8" Click ="ListCertButton_Click">

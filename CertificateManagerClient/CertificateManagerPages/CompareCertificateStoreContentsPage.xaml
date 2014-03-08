@@ -27,8 +27,8 @@
             <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
             <Image Width="300">
                 <Image.Source>
@@ -57,14 +57,14 @@
                 </TextBlock>
             </Border>
 
-            <Label Name="ServerLabel" Content="Server Name" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" ToolTip="Which server to compare certificate store contents"></Label>
-        <TextBox Name="ServerName" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="ServerLabel" Content="* Server Name" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" ToolTip="Which server to compare certificate store contents"></Label>
+        <TextBox Name="ServerName" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
-            <Label Name="ServerLabel2" Content="Server Name" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" ToolTip="Which server to compare certificate store contents"></Label>
-            <TextBox Name="ServerName2" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="ServerLabel2" Content="* Server Name" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" ToolTip="Which server to compare certificate store contents"></Label>
+            <TextBox Name="ServerName2" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
-        <Label Name="StoreLabel" Content="Certificate Store" Visibility="Visible" Margin="5" Grid.Column="1" Grid.Row="5" ToolTip="Which store to install certificate into"></Label>
-        <ListBox Name="Store" Margin="5" Grid.Column="0" Visibility="Visible" Grid.Row="5" FontSize="12">
+        <Label Name="StoreLabel" Content="* Certificate Store" FontWeight="Bold" Visibility="Visible" Margin="5" Grid.Column="0" Grid.Row="5" ToolTip="Which store to install certificate into"></Label>
+        <ListBox Name="Store" Margin="5" Grid.Column="1" Visibility="Visible" Grid.Row="5" FontSize="12">
             <ListBoxItem Content="CA"></ListBoxItem>
             <ListBoxItem Content="MY"></ListBoxItem>
             <ListBoxItem Content="ROOT"></ListBoxItem>

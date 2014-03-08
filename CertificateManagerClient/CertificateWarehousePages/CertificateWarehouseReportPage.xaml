@@ -23,8 +23,8 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
             <Image Width="300">
                 <Image.Source>
@@ -56,18 +56,18 @@
                 </TextBlock>
             </Border>
 
-            <Label Name="LimitLabel" Content="Max # of Certificates" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" ToolTip="The maximum number of certificates to retrieve.  Default is 1000"></Label>
-        <TextBox Name="Limit" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="LimitLabel" Content="Max # of Certificates" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" ToolTip="The maximum number of certificates to retrieve.  Default is 1000"></Label>
+        <TextBox Name="Limit" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
-            <Label Name="SkipLabel" Content="# of Certificates to Skip" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" ToolTip="Skip this number of certificates."></Label>
-            <TextBox Name="Skip" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="SkipLabel" Content="# of Certificates to Skip" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" ToolTip="Skip this number of certificates."></Label>
+            <TextBox Name="Skip" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
 
         <Button x:Name ="ListCertButton" Content="List Certificates" Width="100" Height="25" Grid.Column="0" Grid.Row="6" Click ="ListCertButton_Click">
         </Button>
 
         <DataGrid x:Name="CertDataGrid" IsReadOnly="True" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center" 
-  VerticalAlignment="Center" AutoGenerateColumns="True">
+  VerticalAlignment="Center" AutoGenerateColumns="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         </DataGrid>
     </Grid>
     </ScrollViewer>
