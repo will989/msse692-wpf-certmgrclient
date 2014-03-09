@@ -1,0 +1,95 @@
+﻿<Page x:Class="CertificateManagerClient.CertificateManagerPages.CertificateManagerDeleteCertificatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:s="clr-namespace:System.Collections;assembly=mscorlib"
+      xmlns:p="clr-namespace:System;assembly=mscorlib"
+      xmlns:generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="300"
+	Title="CertificateManager - Delete a Certificate from a Certificate Store">
+
+    <ScrollViewer Grid.Row="1">
+        <Grid Background="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            <Image Width="300">
+                <Image.Source>
+                    <!-- To save significant application memory, set the DecodePixelWidth or  
+     DecodePixelHeight of the BitmapImage value of the image source to the desired 
+     height and width of the rendered image. If you don't do this, the application will 
+     cache the image as though it were rendered as its normal size rather then just 
+     the size that is displayed. -->
+                    <!-- Note: In order to preserve aspect ratio, only set either DecodePixelWidth
+         or DecodePixelHeight but not both. -->
+                    <BitmapImage DecodePixelWidth="200"  
+     UriSource="..\Images\hero-fpo-about.jpg" />
+                </Image.Source>
+            </Image>
+            <Border BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0">
+                <TextBlock>
+         <Hyperlink>Certificate Manager Home    
+             <Hyperlink.NavigateUri>..\CertificateManagerHome.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+         <Hyperlink>Certificate Report Page    
+             <Hyperlink.NavigateUri>..\CertificateManagerPages\CertificateReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+               <Hyperlink>     Add Certificate Page
+             <Hyperlink.NavigateUri>..\CertificateManagerPages\AddCertificate.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+         <Hyperlink>      Expiring Certificate Report Page
+             <Hyperlink.NavigateUri>..\CertificateManagerPages\ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+                </TextBlock>
+            </Border>
+
+            <Label Name="ServerLabel" Content=" * Server Name" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" FontWeight="Bold" ToolTip="Which server to install certificate on"></Label>
+            <TextBox Text="{Binding UpdateSourceTrigger=PropertyChanged, Mode=OneWay, ValidatesOnDataErrors=True}" Name="ServerName" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" FontSize="11">
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Name="StoreLabel" Content="* Certificate Store" Visibility="Visible" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="3" ToolTip="Which store to install certificate into"></Label>
+            <ListBox Name="Store" Margin="5" Grid.Column="1" SelectedIndex="0" Visibility="Visible" Grid.Row="3" FontSize="12">
+                <ListBoxItem Content="CA"></ListBoxItem>
+                <ListBoxItem Content="MY"></ListBoxItem>
+                <ListBoxItem Content="ROOT"></ListBoxItem>
+                <ListBoxItem Content="TRUST"></ListBoxItem>
+            </ListBox>
+            
+            <Label Name="ThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Visible" ToolTip="The thumbprint of the certificate we wish to find"></Label>
+            <TextBox Name="Thumbprint" Margin="5" Grid.Column="1" Grid.Row="4" Visibility="Visible" FontSize="11" Text=""></TextBox>
+
+            <Label Name="CertNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="0" Grid.Row="5" Visibility="Visible" ToolTip="The name of the certificate we want to find."></Label>
+            <TextBox Name="CertName" Margin="5" Grid.Column="1" Grid.Row="5" Visibility="Visible" FontSize="11" Text=""></TextBox>
+
+            <Button x:Name ="DeleteCertButton" Content="Delete Certificate" Width="100" Height="25" Grid.Column="0" Grid.Row="6" Click ="DeleteCertButton_Click">
+            </Button>
+
+           
+        </Grid>
+    </ScrollViewer>
+</Page>

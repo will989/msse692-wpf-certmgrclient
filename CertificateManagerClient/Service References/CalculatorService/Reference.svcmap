@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="580256c7-1bb8-4607-a922-94942a3d6275" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5c1dfea7-1768-4297-9f91-f3c2c60ff88c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,14 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://win-iv85psjvcob:8000/ServiceModelSamples/service" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Microsoft.ServiceModel.Samples.wsdl" MetadataType="Wsdl" ID="bd65cd60-c1fa-4442-8451-de08e861ecf3" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="021eebfb-10ff-4af8-bd35-5cc4282a231a" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
-    <MetadataFile FileName="Microsoft.ServiceModel.Samples.xsd" MetadataType="Schema" ID="57ea50f6-f9fe-4e1c-9cfd-83da248994b9" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
-    <MetadataFile FileName="service3.xsd" MetadataType="Schema" ID="b75ab366-5a76-493e-a64d-d38766a19e4b" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
-    <MetadataFile FileName="System.Security.Cryptography.X509Certificates.xsd" MetadataType="Schema" ID="a47e8263-62ce-4155-bb1f-d60074f48986" SourceId="1" SourceUrl="http://win-iv85psjvcob:8000/ServiceModelSamples/service/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="f74568b1-03db-4254-a79b-cc3407aed8f8" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?wsdl=wsdl0" />
+    <MetadataFile FileName="service.disco" MetadataType="Disco" ID="69aaf2bc-dcea-498b-b7b6-e672f29bf711" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?disco" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="364aa89b-ba64-493b-a121-a785f0b311de" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?xsd=xsd1" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="7186c20a-6981-42a1-96ed-2e34e06c5ee6" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?xsd=xsd0" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="7002cad3-3dd2-4ed3-85db-4e3ef8f39b42" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?xsd=xsd2" />
+    <MetadataFile FileName="CalculatorService.wsdl" MetadataType="Wsdl" ID="fd044eec-bc88-4fcb-9721-c417039aa77d" SourceId="1" SourceUrl="http://localhost:8000/ServiceModelSamples/service?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

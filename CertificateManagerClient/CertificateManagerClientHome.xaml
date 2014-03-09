@@ -84,6 +84,11 @@
             <Hyperlink.NavigateUri>CertificateManagerPages\CompareCertificateStoreContentsPage.xaml</Hyperlink.NavigateUri>
         </Hyperlink>
         </TextBlock>
+        <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2">
+        <Hyperlink>Delete Certificate from Store Page
+            <Hyperlink.NavigateUri>CertificateManagerPages\CertificateManagerDeleteCertificatePage.xaml</Hyperlink.NavigateUri>
+        </Hyperlink>
+        </TextBlock>
         <Label Name="CertificateWarehouseLabel" Content="Certificate Warehouse Links" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" ToolTip="Links for managing certificates in a repository"></Label>
         <TextBlock Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2">
                     <Hyperlink>Certificate Warehouse Report Page

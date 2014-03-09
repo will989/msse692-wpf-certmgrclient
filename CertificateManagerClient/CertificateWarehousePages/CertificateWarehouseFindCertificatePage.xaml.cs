@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using CertificateManagerClient.CertificateWarehouseService;
 
 namespace CertificateManagerClient.CertificateWarehousePages
+    
 {
     /// <summary>
     /// Interaction logic for CertificateReportPage.xaml

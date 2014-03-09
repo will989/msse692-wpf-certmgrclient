@@ -33,7 +33,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -100,6 +100,9 @@
     <Compile Include="CertificateManagerPages\CertificateReportPage.xaml.cs">
       <DependentUpon>CertificateReportPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CertificateManagerPages\CertificateManagerDeleteCertificatePage.xaml.cs">
+      <DependentUpon>CertificateManagerDeleteCertificatePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CertificateManagerPages\CompareCertificateStoreContentsPage.xaml.cs">
       <DependentUpon>CompareCertificateStoreContentsPage.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="CertificateManagerPages\CertificateReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CertificateManagerPages\CertificateManagerDeleteCertificatePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -229,15 +236,15 @@
     </None>
     <None Include="Properties\app.manifest" />
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\CalculatorService\Microsoft.ServiceModel.Samples.wsdl" />
-    <None Include="Service References\CalculatorService\Microsoft.ServiceModel.Samples.xsd">
+    <None Include="Service References\CalculatorService\CalculatorService.wsdl" />
+    <None Include="Service References\CalculatorService\service.wsdl" />
+    <None Include="Service References\CalculatorService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CalculatorService\service1.wsdl" />
-    <None Include="Service References\CalculatorService\service3.xsd">
+    <None Include="Service References\CalculatorService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CalculatorService\System.Security.Cryptography.X509Certificates.xsd">
+    <None Include="Service References\CalculatorService\service2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CertificateManagerService\CertificateManagerClient.CertificateManagerService.CompositeType.datasource">
@@ -346,6 +353,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CalculatorService\service.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CalculatorService\configuration91.svcinfo" />

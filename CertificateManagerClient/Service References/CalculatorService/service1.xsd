@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://Microsoft.ServiceModel.Samples" elementFormDefault="qualified" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" />
+  <xs:import schemaLocation="http://localhost:8000/ServiceModelSamples/service?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" />
   <xs:element name="ListCertificatesInStore">
     <xs:complexType>
       <xs:sequence>
@@ -186,12 +186,29 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="DeleteCertificateByThumbprintRemote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="thumbprint" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="storeName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" minOccurs="0" name="location" type="q20:StoreLocation" />
+        <xs:element minOccurs="0" name="serverName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCertificateByThumbprintRemoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCertificateByThumbprintRemoteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RemoveCertificateLocal">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="storeName" nillable="true" type="xs:string" />
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" minOccurs="0" name="storeLocation" type="q20:StoreLocation" />
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" minOccurs="0" name="certificate" nillable="true" type="q21:X509Certificate2" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" minOccurs="0" name="storeLocation" type="q21:StoreLocation" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" minOccurs="0" name="certificate" nillable="true" type="q22:X509Certificate2" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -206,7 +223,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="storeName" nillable="true" type="xs:string" />
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" minOccurs="0" name="storeLocation" type="q22:StoreLocation" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" minOccurs="0" name="storeLocation" type="q23:StoreLocation" />
         <xs:element minOccurs="0" name="serverA" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="serverB" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -215,7 +232,7 @@
   <xs:element name="CompareCertificatesInStoreResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" minOccurs="0" name="CompareCertificatesInStoreResult" nillable="true" type="q23:ArrayOfX509Certificate2" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" minOccurs="0" name="CompareCertificatesInStoreResult" nillable="true" type="q24:ArrayOfX509Certificate2" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

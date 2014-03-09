@@ -62,6 +62,11 @@ namespace CertificateManagerClient.CalculatorService {
             "sponse")]
         bool DeleteCertificateByThumbprint(string certificateName, string thumbprint, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateByThumbprintRe" +
+            "mote", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateByThumbprintRe" +
+            "moteResponse")]
+        bool DeleteCertificateByThumbprintRemote(string thumbprint, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location, string serverName);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/RemoveCertificateLocal", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/RemoveCertificateLocalResponse")]
         bool RemoveCertificateLocal(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);
         
@@ -146,6 +151,10 @@ namespace CertificateManagerClient.CalculatorService {
         
         public bool DeleteCertificateByThumbprint(string certificateName, string thumbprint, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location) {
             return base.Channel.DeleteCertificateByThumbprint(certificateName, thumbprint, storeName, location);
+        }
+        
+        public bool DeleteCertificateByThumbprintRemote(string thumbprint, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location, string serverName) {
+            return base.Channel.DeleteCertificateByThumbprintRemote(thumbprint, storeName, location, serverName);
         }
         
         public bool RemoveCertificateLocal(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) {
