@@ -115,6 +115,9 @@
     <Compile Include="CertificateWarehousePages\CertificateWarehouseExpiringCertificateReportPage.xaml.cs">
       <DependentUpon>CertificateWarehouseExpiringCertificateReportPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CertificateWarehousePages\CertificateWarehouseDeleteCertificatePage.xaml.cs">
+      <DependentUpon>CertificateWarehouseDeleteCertificatePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CertificateWarehousePages\CertificateWarehouseFindCertificatePage.xaml.cs">
       <DependentUpon>CertificateWarehouseFindCertificatePage.xaml</DependentUpon>
     </Compile>
@@ -190,6 +193,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="CertificateWarehousePages\CertificateWarehouseExpiringCertificateReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CertificateWarehousePages\CertificateWarehouseDeleteCertificatePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

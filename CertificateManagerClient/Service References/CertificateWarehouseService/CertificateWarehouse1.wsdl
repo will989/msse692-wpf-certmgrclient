@@ -26,6 +26,12 @@
   <wsdl:message name="ICertificateWarehouseService_AddCertificateToDatabase_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddCertificateToDatabaseResponse" />
   </wsdl:message>
+  <wsdl:message name="ICertificateWarehouseService_RemoveCertificateFromDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCertificateFromDatabase" />
+  </wsdl:message>
+  <wsdl:message name="ICertificateWarehouseService_RemoveCertificateFromDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCertificateFromDatabaseResponse" />
+  </wsdl:message>
   <wsdl:message name="ICertificateWarehouseService_GetCertificateById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCertificateById" />
   </wsdl:message>
@@ -75,6 +81,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICertificateWarehouseService/AddCertificateToDatabase" message="tns:ICertificateWarehouseService_AddCertificateToDatabase_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICertificateWarehouseService/AddCertificateToDatabaseResponse" message="tns:ICertificateWarehouseService_AddCertificateToDatabase_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="RemoveCertificateFromDatabase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertificateWarehouseService/RemoveCertificateFromDatabase" message="tns:ICertificateWarehouseService_RemoveCertificateFromDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertificateWarehouseService/RemoveCertificateFromDatabaseResponse" message="tns:ICertificateWarehouseService_RemoveCertificateFromDatabase_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetCertificateById">
       <wsdl:input wsaw:Action="http://tempuri.org/ICertificateWarehouseService/GetCertificateById" message="tns:ICertificateWarehouseService_GetCertificateById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICertificateWarehouseService/GetCertificateByIdResponse" message="tns:ICertificateWarehouseService_GetCertificateById_OutputMessage" />
@@ -100,7 +110,7 @@
       <wsdl:output wsaw:Action="http://tempuri.org/ICertificateWarehouseService/DoWorkResponse" message="tns:ICertificateWarehouseService_DoWork_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_ICertificateWarehouseService" type="tns:ICertificateWarehouseService">
+  <wsdl:binding name="CertificateWarehouseService" type="tns:ICertificateWarehouseService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="AddCertificateToOrganization">
       <soap:operation soapAction="http://tempuri.org/ICertificateWarehouseService/AddCertificateToOrganization" style="document" />
@@ -122,6 +132,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddCertificateToDatabase">
       <soap:operation soapAction="http://tempuri.org/ICertificateWarehouseService/AddCertificateToDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCertificateFromDatabase">
+      <soap:operation soapAction="http://tempuri.org/ICertificateWarehouseService/RemoveCertificateFromDatabase" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -185,7 +204,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="CertificateWarehouse">
-    <wsdl:port name="BasicHttpBinding_ICertificateWarehouseService" binding="tns:BasicHttpBinding_ICertificateWarehouseService">
+    <wsdl:port name="CertificateWarehouseService" binding="tns:CertificateWarehouseService">
       <soap:address location="http://win-iv85psjvcob/CertificateWarehouseService.svc" />
     </wsdl:port>
   </wsdl:service>

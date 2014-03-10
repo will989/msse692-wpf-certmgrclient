@@ -104,5 +104,10 @@
              <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseFindCertificatePage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
         </TextBlock>
+        <TextBlock Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2">
+         <Hyperlink>Certificate Warehouse Delete Certificate Page
+             <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseDeleteCertificatePage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+        </TextBlock>
     </Grid>
 </Page>

@@ -310,6 +310,10 @@ namespace CertificateManagerClient.CertificateWarehouseService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateWarehouseService/AddCertificateToDatabase", ReplyAction="http://tempuri.org/ICertificateWarehouseService/AddCertificateToDatabaseResponse")]
         bool AddCertificateToDatabase(CertificateManagerClient.CertificateWarehouseService.Certificate certificate);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateWarehouseService/RemoveCertificateFromDatabase", ReplyAction="http://tempuri.org/ICertificateWarehouseService/RemoveCertificateFromDatabaseResp" +
+            "onse")]
+        bool RemoveCertificateFromDatabase(string thumbprint);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICertificateWarehouseService/GetCertificateById", ReplyAction="http://tempuri.org/ICertificateWarehouseService/GetCertificateByIdResponse")]
         CertificateManagerClient.CertificateWarehouseService.Certificate GetCertificateById(string certificateId);
         
@@ -368,6 +372,10 @@ namespace CertificateManagerClient.CertificateWarehouseService {
         
         public bool AddCertificateToDatabase(CertificateManagerClient.CertificateWarehouseService.Certificate certificate) {
             return base.Channel.AddCertificateToDatabase(certificate);
+        }
+        
+        public bool RemoveCertificateFromDatabase(string thumbprint) {
+            return base.Channel.RemoveCertificateFromDatabase(thumbprint);
         }
         
         public CertificateManagerClient.CertificateWarehouseService.Certificate GetCertificateById(string certificateId) {
