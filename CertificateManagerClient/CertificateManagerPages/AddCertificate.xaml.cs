@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Media;
 using CertificateManagerClient.CertificateManagerService;
@@ -34,6 +35,7 @@ namespace CertificateManagerClient.CertificateManagerPages
         {
 
             System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
+            AddCertLabel.Content = "";
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -174,11 +176,13 @@ namespace CertificateManagerClient.CertificateManagerPages
             {
                 System.Diagnostics.Debug.WriteLine("Certificate was added");
                 log.Debug("Added is True, certificate was added!");
+                AddCertLabel.Content = "Certificate was added!";
             }
             else
             {
                 {
                     log.Debug("Added is false");
+                    AddCertLabel.Content = "Unable to add certificate.";
                 }
             }
         }

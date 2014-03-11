@@ -18,6 +18,7 @@ namespace CertificateManagerClient.CertificateManagerPages
         {
             InitializeComponent();
             log.Debug("In CertificateManager DeleteCertificate Page InitializeComponent");
+            
 
         }
         
@@ -30,6 +31,7 @@ namespace CertificateManagerClient.CertificateManagerPages
 
             //instantiate windows service
             CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+            DeleteLabel.Content = "";
 
             
             string thumbprint = null;
@@ -97,10 +99,12 @@ namespace CertificateManagerClient.CertificateManagerPages
                 if (removed)
                 {
                     log.Debug("Removed is true - certificate was removed!");
+                    DeleteLabel.Content = "Certificate was removed!";
                 }
                 else
                 {
                     log.Debug("Removed is false - certificate was not removed...");
+                    DeleteLabel.Content = "Unable to remove certificate.";
                 }
 
             }

@@ -88,6 +88,7 @@
 
             <Button x:Name ="DeleteCertButton" Content="Delete Certificate" Width="100" Height="25" Grid.Column="0" Grid.Row="6" Click ="DeleteCertButton_Click">
             </Button>
+            <Label Name="DeleteLabel" Content="" Margin="5" Grid.Column="0" Grid.Row="7" Visibility="Visible" ></Label>
 
            
         </Grid>

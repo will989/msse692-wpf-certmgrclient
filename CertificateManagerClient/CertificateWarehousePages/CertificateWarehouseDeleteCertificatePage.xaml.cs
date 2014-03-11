@@ -26,6 +26,8 @@ namespace CertificateManagerClient.CertificateWarehousePages
             CertificateWarehouseService.CertificateWarehouseServiceClient
                  wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
 
+            DeleteLabel.Content = "";
+
             Certificate MyCertificate = new Certificate();
             string thumbprint = null;
             string id = null;
