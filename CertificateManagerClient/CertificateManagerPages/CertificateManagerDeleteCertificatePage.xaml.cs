@@ -100,11 +100,13 @@ namespace CertificateManagerClient.CertificateManagerPages
                 {
                     log.Debug("Removed is true - certificate was removed!");
                     DeleteLabel.Content = "Certificate was removed!";
+                    MessageBox.Show("Certificate was removed!");
                 }
                 else
                 {
                     log.Debug("Removed is false - certificate was not removed...");
                     DeleteLabel.Content = "Unable to remove certificate.";
+                    MessageBox.Show("Unable to remove certificate.");
                 }
 
             }

@@ -177,12 +177,14 @@ namespace CertificateManagerClient.CertificateManagerPages
                 System.Diagnostics.Debug.WriteLine("Certificate was added");
                 log.Debug("Added is True, certificate was added!");
                 AddCertLabel.Content = "Certificate was added!";
+                MessageBox.Show("Certificate was added!");
             }
             else
             {
                 {
                     log.Debug("Added is false");
                     AddCertLabel.Content = "Unable to add certificate.";
+                    MessageBox.Show("Unable to add certificate.");
                 }
             }
         }

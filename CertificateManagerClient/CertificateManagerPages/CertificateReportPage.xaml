@@ -72,7 +72,7 @@
         <Button x:Name ="ListCertButton" Content="List Certificates" Width="100" Height="25" Grid.Column="0" Grid.Row="6" Click ="ListCertButton_Click">
         </Button>
 
-            <DataGrid x:Name="CertDataGrid" PreviewKeyDown="Cert_PreviewKeyDown" IsReadOnly="False" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center" 
+            <DataGrid x:Name="CertDataGrid" PreviewKeyDown="Cert_PreviewKeyDown" IsReadOnly="False" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
   VerticalAlignment="Center" AutoGenerateColumns="True">
                </DataGrid>
     </Grid>

@@ -28,14 +28,15 @@ namespace CertificateManagerClient.CertificateWarehousePages
             int limit = -1;
             int skip = -1;
 
-            if (Limit.Text.Length >= 1)
+            //check that value is an integer: http://stackoverflow.com/questions/10401633/validating-a-textbox-field-for-only-numeric-input
+            if (int.TryParse(Limit.Text, out limit))
             {
                 limit = Convert.ToInt32(Limit.Text);
             }
             else 
                 limit = 1000;
 
-            if (Skip.Text.Length >= 1)
+            if (int.TryParse(Skip.Text, out skip))
             {
                 skip = Convert.ToInt32(Skip.Text);
             }

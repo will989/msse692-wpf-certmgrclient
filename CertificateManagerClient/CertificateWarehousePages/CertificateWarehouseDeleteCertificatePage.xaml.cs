@@ -47,10 +47,12 @@ namespace CertificateManagerClient.CertificateWarehousePages
                 if (removed)
                 {
                     DeleteLabel.Content = "Certificate Deleted!";
+                    MessageBox.Show("Certificate was Deleted!");
                 }
                 else
                 {
                     DeleteLabel.Content = "Unable to Delete Certificate";
+                    MessageBox.Show("Unable to Delete Certificate.");
                 }
             }
             catch (EndpointNotFoundException epnfe)

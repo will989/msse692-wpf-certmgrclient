@@ -6,6 +6,7 @@
       xmlns:s="clr-namespace:System.Collections;assembly=mscorlib"
       xmlns:p="clr-namespace:System;assembly=mscorlib"
       xmlns:generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+      xmlns:webControls="clr-namespace:System.Web.UI.WebControls;assembly=System.Web"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="CertificateManager - View Certificates in Database">
@@ -58,15 +59,14 @@
 
             <Label Name="LimitLabel" Content="Max # of Certificates" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" ToolTip="The maximum number of certificates to retrieve.  Default is 1000"></Label>
         <TextBox Name="Limit" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
-
-            <Label Name="SkipLabel" Content="# of Certificates to Skip" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" ToolTip="Skip this number of certificates."></Label>
+           <Label Name="SkipLabel" Content="# of Certificates to Skip" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" ToolTip="Skip this number of certificates."></Label>
             <TextBox Name="Skip" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
 
         <Button x:Name ="ListCertButton" Content="List Certificates" Width="100" Height="25" Grid.Column="0" Grid.Row="6" Click ="ListCertButton_Click">
         </Button>
 
-        <DataGrid x:Name="CertDataGrid" IsReadOnly="True" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center" 
+            <DataGrid x:Name="CertDataGrid" IsReadOnly="True" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" HorizontalAlignment="Center" 
   VerticalAlignment="Center" AutoGenerateColumns="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         </DataGrid>
     </Grid>

@@ -24,6 +24,9 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="1"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -95,16 +98,21 @@
          </Hyperlink>
         </TextBlock>
         <TextBlock Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Hyperlink>Certificate Warehouse Expired Certificate Report Page
+             <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
+         </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2">
          <Hyperlink>Certificate Warehouse Add Certificate Page
              <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseAddCertToDatabasePage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
         </TextBlock>
-        <TextBlock Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2">
+        <TextBlock Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2">
          <Hyperlink>Certificate Warehouse Find Certificate Page
              <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseFindCertificatePage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>
         </TextBlock>
-        <TextBlock Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2">
+        <TextBlock Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2">
          <Hyperlink>Certificate Warehouse Delete Certificate Page
              <Hyperlink.NavigateUri>CertificateWarehousePages\CertificateWarehouseDeleteCertificatePage.xaml</Hyperlink.NavigateUri>
          </Hyperlink>

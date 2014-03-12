@@ -10,8 +10,8 @@
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="CertificateWarehouse - Expiring Certificates in Database">
 
-
-    <Grid Background="AliceBlue">
+    <ScrollViewer Grid.Row="1">
+        <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -27,7 +27,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <Image Width="300">
@@ -58,15 +58,16 @@
         </Border>
 
         
-        <Label Name="ExpCertDaysLabel" Content="* Certificates Expiring Within...Days" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="7" Visibility="Visible" ToolTip="Find certificates that expire within this number days"></Label>
+        <Label Name="ExpCertDaysLabel" Content="* Certificates Expiring Within...Days" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="7" Visibility="Visible" ToolTip="Find certificates that expire within this number days"></Label>
         <TextBox Name="ExpCertDays" Margin="5" Grid.Column="1" Grid.Row="7" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
 
-        <Button x:Name ="ListExpCertButton" Content="Get Expiring Certificates" Width="250" Height="25" Grid.Column="0" Grid.Row="8" Click ="ListCertButton_Click">
+        <Button x:Name ="ListExpCertButton" Content="Get Expiring Certificates" Width="250" Height="25" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" Click ="ListCertButton_Click">
         </Button>
 
-        <DataGrid x:Name="CertDataGrid" IsReadOnly="True" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Center" 
+        <DataGrid x:Name="CertDataGrid" IsReadOnly="True" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="9" HorizontalAlignment="Left" 
   VerticalAlignment="Center" AutoGenerateColumns="True">
         </DataGrid>
     </Grid>
+        </ScrollViewer>
 </Page>

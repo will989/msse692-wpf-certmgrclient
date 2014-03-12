@@ -114,10 +114,14 @@ namespace CertificateManagerClient.CertificateWarehousePages
             {
                 System.Diagnostics.Debug.WriteLine("Certificate added!");
                 System.Diagnostics.Debug.WriteLine("Certificate Thumbprint = {0}", certificate.Thumbprint);
+                AddCertLabel.Content = "Certificate was added!";
+                MessageBox.Show("Certificate was added!");
             }
             else
             {
                 System.Diagnostics.Debug.WriteLine("Certificate not added :-( ");
+                AddCertLabel.Content = "Unable to add Certificate.";
+                MessageBox.Show("Unable to add Certificate.");
             }
 
         }
