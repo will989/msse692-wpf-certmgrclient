@@ -8,100 +8,101 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CertificateManagerClient.CalculatorService {
+namespace CertificateManagerClient.CertificateService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="CalculatorService.ICalculator")]
-    public interface ICalculator {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="CertificateService.ICertificate")]
+    public interface ICertificate {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/ListCertificatesInStore", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/ListCertificatesInStoreResponse" +
-            "")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInStore", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInStoreRespons" +
+            "e")]
         System.Security.Cryptography.X509Certificates.X509Certificate2[] ListCertificatesInStore(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/ListCertificatesInRemoteStore", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/ListCertificatesInRemoteStoreRe" +
-            "sponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInRemoteStore", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInRemoteStoreR" +
+            "esponse")]
         System.Security.Cryptography.X509Certificates.X509Certificate2[] ListCertificatesInRemoteStore(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, string serverName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/ListExpiringCertificatesInStore" +
-            "", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/ListExpiringCertificatesInStore" +
-            "Response")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInStor" +
+            "e", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInStor" +
+            "eResponse")]
         System.Security.Cryptography.X509Certificates.X509Certificate2[] ListExpiringCertificatesInStore(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, int days);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/ListExpiringCertificatesInRemot" +
-            "eStore", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/ListExpiringCertificatesInRemot" +
-            "eStoreResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInRemo" +
+            "teStore", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInRemo" +
+            "teStoreResponse")]
         System.Security.Cryptography.X509Certificates.X509Certificate2[] ListExpiringCertificatesInRemoteStore(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, int days, string serverName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/PrintCertificateInfo", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/PrintCertificateInfoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/PrintCertificateInfo", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/PrintCertificateInfoResponse")]
         void PrintCertificateInfo(System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/EnumCertificatesByStoreName", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/EnumCertificatesByStoreNameResp" +
-            "onse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificatesByStoreName", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificatesByStoreNameRes" +
+            "ponse")]
         void EnumCertificatesByStoreName(System.Security.Cryptography.X509Certificates.StoreName name, System.Security.Cryptography.X509Certificates.StoreLocation location);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/EnumCertificates", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/EnumCertificatesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificates", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificatesResponse")]
         void EnumCertificates(string name, System.Security.Cryptography.X509Certificates.StoreLocation location);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/InstallCertificateLocal", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/InstallCertificateLocalResponse" +
-            "")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateLocal", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateLocalRespons" +
+            "e")]
         bool InstallCertificateLocal(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/InstallCertificateRemote", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/InstallCertificateRemoteRespons" +
-            "e")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateRemote", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateRemoteRespon" +
+            "se")]
         bool InstallCertificateRemote(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, string serverName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificate", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificate", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateResponse")]
         bool DeleteCertificate(string certificateName, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateRemote", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateRemoteResponse" +
-            "")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateRemote", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateRemoteRespons" +
+            "e")]
         bool DeleteCertificateRemote(string certificateName, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location, string serverName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateByThumbprint", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateByThumbprintRe" +
-            "sponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprint", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprintR" +
+            "esponse")]
         bool DeleteCertificateByThumbprint(string certificateName, string thumbprint, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateByThumbprintRe" +
-            "mote", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateByThumbprintRe" +
-            "moteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprintR" +
+            "emote", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprintR" +
+            "emoteResponse")]
         bool DeleteCertificateByThumbprintRemote(string thumbprint, string storeName, System.Security.Cryptography.X509Certificates.StoreLocation location, string serverName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/RemoveCertificateLocal", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/RemoveCertificateLocalResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/RemoveCertificateLocal", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/RemoveCertificateLocalResponse" +
+            "")]
         bool RemoveCertificateLocal(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/CompareCertificatesInStore", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/CompareCertificatesInStoreRespo" +
-            "nse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/CompareCertificatesInStore", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/CompareCertificatesInStoreResp" +
+            "onse")]
         System.Security.Cryptography.X509Certificates.X509Certificate2[] CompareCertificatesInStore(string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, string serverA, string serverB);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetData", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICertificate/GetData", ReplyAction="http://Microsoft.ServiceModel.Samples/ICertificate/GetDataResponse")]
         string GetData(int value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICalculatorChannel : CertificateManagerClient.CalculatorService.ICalculator, System.ServiceModel.IClientChannel {
+    public interface ICertificateChannel : CertificateManagerClient.CertificateService.ICertificate, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CalculatorClient : System.ServiceModel.ClientBase<CertificateManagerClient.CalculatorService.ICalculator>, CertificateManagerClient.CalculatorService.ICalculator {
+    public partial class CertificateClient : System.ServiceModel.ClientBase<CertificateManagerClient.CertificateService.ICertificate>, CertificateManagerClient.CertificateService.ICertificate {
         
-        public CalculatorClient() {
+        public CertificateClient() {
         }
         
-        public CalculatorClient(string endpointConfigurationName) : 
+        public CertificateClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public CalculatorClient(string endpointConfigurationName, string remoteAddress) : 
+        public CertificateClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CalculatorClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CertificateClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CalculatorClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CertificateClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         

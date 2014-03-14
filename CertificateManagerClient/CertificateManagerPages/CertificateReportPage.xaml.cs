@@ -29,7 +29,8 @@ namespace CertificateManagerClient.CertificateManagerPages
             //     wsref = new CertificateManagerService.CertificateManagerServiceClient();
 
             //instantiate windows service client
-            CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+            //CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+            CertificateService.CertificateClient wsref = new CertificateService.CertificateClient();
 
             string newStoreName = null;
             string serverName = null;

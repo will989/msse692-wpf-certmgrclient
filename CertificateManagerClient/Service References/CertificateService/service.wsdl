@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Microsoft.ServiceModel.Samples" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Microsoft.ServiceModel.Samples/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/ServiceModelSamples/service?xsd=xsd0" namespace="http://Microsoft.ServiceModel.Samples" />
+      <xsd:import schemaLocation="http://localhost:8000/ServiceModelSamples/service?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/ServiceModelSamples/service?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography.X509Certificates" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICertificate_ListCertificatesInStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCertificatesInStore" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_ListCertificatesInStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCertificatesInStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_ListCertificatesInRemoteStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCertificatesInRemoteStore" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_ListCertificatesInRemoteStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCertificatesInRemoteStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_ListExpiringCertificatesInStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListExpiringCertificatesInStore" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_ListExpiringCertificatesInStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListExpiringCertificatesInStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_ListExpiringCertificatesInRemoteStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListExpiringCertificatesInRemoteStore" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_ListExpiringCertificatesInRemoteStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListExpiringCertificatesInRemoteStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_PrintCertificateInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintCertificateInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_PrintCertificateInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintCertificateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_EnumCertificatesByStoreName_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnumCertificatesByStoreName" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_EnumCertificatesByStoreName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnumCertificatesByStoreNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_EnumCertificates_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnumCertificates" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_EnumCertificates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnumCertificatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_InstallCertificateLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:InstallCertificateLocal" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_InstallCertificateLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InstallCertificateLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_InstallCertificateRemote_InputMessage">
+    <wsdl:part name="parameters" element="tns:InstallCertificateRemote" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_InstallCertificateRemote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InstallCertificateRemoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_DeleteCertificate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCertificate" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_DeleteCertificate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCertificateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_DeleteCertificateRemote_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCertificateRemote" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_DeleteCertificateRemote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCertificateRemoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_DeleteCertificateByThumbprint_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCertificateByThumbprint" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_DeleteCertificateByThumbprint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCertificateByThumbprintResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_DeleteCertificateByThumbprintRemote_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCertificateByThumbprintRemote" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_DeleteCertificateByThumbprintRemote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCertificateByThumbprintRemoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_RemoveCertificateLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCertificateLocal" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_RemoveCertificateLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCertificateLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_CompareCertificatesInStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompareCertificatesInStore" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_CompareCertificatesInStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompareCertificatesInStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="ICertificate_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICertificate">
+    <wsdl:operation name="ListCertificatesInStore">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInStore" message="tns:ICertificate_ListCertificatesInStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInStoreResponse" message="tns:ICertificate_ListCertificatesInStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCertificatesInRemoteStore">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInRemoteStore" message="tns:ICertificate_ListCertificatesInRemoteStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInRemoteStoreResponse" message="tns:ICertificate_ListCertificatesInRemoteStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListExpiringCertificatesInStore">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInStore" message="tns:ICertificate_ListExpiringCertificatesInStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInStoreResponse" message="tns:ICertificate_ListExpiringCertificatesInStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListExpiringCertificatesInRemoteStore">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInRemoteStore" message="tns:ICertificate_ListExpiringCertificatesInRemoteStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInRemoteStoreResponse" message="tns:ICertificate_ListExpiringCertificatesInRemoteStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintCertificateInfo">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/PrintCertificateInfo" message="tns:ICertificate_PrintCertificateInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/PrintCertificateInfoResponse" message="tns:ICertificate_PrintCertificateInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumCertificatesByStoreName">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificatesByStoreName" message="tns:ICertificate_EnumCertificatesByStoreName_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificatesByStoreNameResponse" message="tns:ICertificate_EnumCertificatesByStoreName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnumCertificates">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificates" message="tns:ICertificate_EnumCertificates_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificatesResponse" message="tns:ICertificate_EnumCertificates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InstallCertificateLocal">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateLocal" message="tns:ICertificate_InstallCertificateLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateLocalResponse" message="tns:ICertificate_InstallCertificateLocal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InstallCertificateRemote">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateRemote" message="tns:ICertificate_InstallCertificateRemote_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateRemoteResponse" message="tns:ICertificate_InstallCertificateRemote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCertificate">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificate" message="tns:ICertificate_DeleteCertificate_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateResponse" message="tns:ICertificate_DeleteCertificate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCertificateRemote">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateRemote" message="tns:ICertificate_DeleteCertificateRemote_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateRemoteResponse" message="tns:ICertificate_DeleteCertificateRemote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCertificateByThumbprint">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprint" message="tns:ICertificate_DeleteCertificateByThumbprint_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprintResponse" message="tns:ICertificate_DeleteCertificateByThumbprint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCertificateByThumbprintRemote">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprintRemote" message="tns:ICertificate_DeleteCertificateByThumbprintRemote_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprintRemoteResponse" message="tns:ICertificate_DeleteCertificateByThumbprintRemote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCertificateLocal">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/RemoveCertificateLocal" message="tns:ICertificate_RemoveCertificateLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/RemoveCertificateLocalResponse" message="tns:ICertificate_RemoveCertificateLocal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompareCertificatesInStore">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/CompareCertificatesInStore" message="tns:ICertificate_CompareCertificatesInStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/CompareCertificatesInStoreResponse" message="tns:ICertificate_CompareCertificatesInStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/GetData" message="tns:ICertificate_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICertificate/GetDataResponse" message="tns:ICertificate_GetData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

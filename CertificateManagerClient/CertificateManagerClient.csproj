@@ -33,7 +33,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -128,12 +128,7 @@
     <Compile Include="OrganizationPages\OrganizationPage.xaml.cs">
       <DependentUpon>OrganizationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Service References\CalculatorService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\CertificateManagerService\Reference.cs">
+    <Compile Include="Service References\CertificateService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -243,31 +238,15 @@
     </None>
     <None Include="Properties\app.manifest" />
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\CalculatorService\CalculatorService.wsdl" />
-    <None Include="Service References\CalculatorService\service.wsdl" />
-    <None Include="Service References\CalculatorService\service.xsd">
+    <None Include="Service References\CertificateService\CertificateService.wsdl" />
+    <None Include="Service References\CertificateService\service.wsdl" />
+    <None Include="Service References\CertificateService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CalculatorService\service1.xsd">
+    <None Include="Service References\CertificateService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CalculatorService\service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerClient.CertificateManagerService.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService1.wsdl" />
-    <None Include="Service References\CertificateManagerService\CertificateManagerService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService41.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService42.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService43.xsd">
+    <None Include="Service References\CertificateService\service2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CertificateWarehouseService\CertificateManagerClient.CertificateWarehouseService.Certificate.datasource">
@@ -278,21 +257,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\CalculatorService\" />
-    <WCFMetadataStorage Include="Service References\CertificateManagerService\" />
+    <WCFMetadataStorage Include="Service References\CertificateService\" />
     <WCFMetadataStorage Include="Service References\CertificateWarehouseService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CertificateManagerService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CertificateManagerService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CertificateManagerService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CertificateWarehouseService\CertificateWarehouse1.wsdl" />
@@ -353,25 +319,22 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CertificateManagerService\CertificateManagerService1.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\hero-fpo-about.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService1.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CalculatorService\service.disco" />
+    <None Include="Service References\CertificateService\service.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CalculatorService\configuration91.svcinfo" />
+    <None Include="Service References\CertificateService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CalculatorService\configuration.svcinfo" />
+    <None Include="Service References\CertificateService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CalculatorService\Reference.svcmap">
+    <None Include="Service References\CertificateService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

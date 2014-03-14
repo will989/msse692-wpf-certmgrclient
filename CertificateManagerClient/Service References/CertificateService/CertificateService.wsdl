@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://Microsoft.ServiceModel.Samples" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CalculatorService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_policy">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://Microsoft.ServiceModel.Samples" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CertificateService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -96,7 +96,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_ListCertificatesInStore_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_ListCertificatesInStore_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -115,7 +115,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_ListCertificatesInStore_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_ListCertificatesInStore_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -134,7 +134,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_ListCertificatesInRemoteStore_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_ListCertificatesInRemoteStore_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -153,7 +153,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_ListCertificatesInRemoteStore_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_ListCertificatesInRemoteStore_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -172,7 +172,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_ListExpiringCertificatesInStore_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_ListExpiringCertificatesInStore_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -191,7 +191,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_ListExpiringCertificatesInStore_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_ListExpiringCertificatesInStore_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -210,7 +210,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_ListExpiringCertificatesInRemoteStore_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_ListExpiringCertificatesInRemoteStore_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -229,7 +229,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_ListExpiringCertificatesInRemoteStore_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_ListExpiringCertificatesInRemoteStore_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -248,7 +248,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_PrintCertificateInfo_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_PrintCertificateInfo_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -267,7 +267,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_PrintCertificateInfo_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_PrintCertificateInfo_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -286,7 +286,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_EnumCertificatesByStoreName_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_EnumCertificatesByStoreName_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -305,7 +305,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_EnumCertificatesByStoreName_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_EnumCertificatesByStoreName_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -324,7 +324,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_EnumCertificates_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_EnumCertificates_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -343,7 +343,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_EnumCertificates_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_EnumCertificates_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -362,7 +362,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_InstallCertificateLocal_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_InstallCertificateLocal_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -381,7 +381,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_InstallCertificateLocal_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_InstallCertificateLocal_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -400,7 +400,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_InstallCertificateRemote_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_InstallCertificateRemote_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -419,7 +419,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_InstallCertificateRemote_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_InstallCertificateRemote_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -438,7 +438,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_DeleteCertificate_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_DeleteCertificate_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -457,7 +457,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_DeleteCertificate_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_DeleteCertificate_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -476,7 +476,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_DeleteCertificateRemote_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_DeleteCertificateRemote_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -495,7 +495,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_DeleteCertificateRemote_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_DeleteCertificateRemote_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -514,7 +514,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_DeleteCertificateByThumbprint_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_DeleteCertificateByThumbprint_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -533,7 +533,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_DeleteCertificateByThumbprint_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_DeleteCertificateByThumbprint_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -552,7 +552,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_DeleteCertificateByThumbprintRemote_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_DeleteCertificateByThumbprintRemote_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -571,7 +571,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_DeleteCertificateByThumbprintRemote_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_DeleteCertificateByThumbprintRemote_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -590,7 +590,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_RemoveCertificateLocal_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_RemoveCertificateLocal_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -609,7 +609,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_RemoveCertificateLocal_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_RemoveCertificateLocal_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -628,7 +628,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_CompareCertificatesInStore_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_CompareCertificatesInStore_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -647,7 +647,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_CompareCertificatesInStore_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_CompareCertificatesInStore_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -666,7 +666,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_GetData_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_GetData_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -685,7 +685,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ICalculator_GetData_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICertificate_GetData_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -706,188 +706,188 @@
   </wsp:Policy>
   <wsdl:import namespace="http://Microsoft.ServiceModel.Samples" location="http://localhost:8000/ServiceModelSamples/service?wsdl=wsdl0" />
   <wsdl:types />
-  <wsdl:binding name="WSHttpBinding_ICalculator" type="i0:ICalculator">
-    <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_policy" />
+  <wsdl:binding name="WSHttpBinding_ICertificate" type="i0:ICertificate">
+    <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ListCertificatesInStore">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/ListCertificatesInStore" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInStore" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_ListCertificatesInStore_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_ListCertificatesInStore_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_ListCertificatesInStore_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_ListCertificatesInStore_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListCertificatesInRemoteStore">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/ListCertificatesInRemoteStore" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/ListCertificatesInRemoteStore" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_ListCertificatesInRemoteStore_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_ListCertificatesInRemoteStore_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_ListCertificatesInRemoteStore_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_ListCertificatesInRemoteStore_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListExpiringCertificatesInStore">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/ListExpiringCertificatesInStore" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInStore" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_ListExpiringCertificatesInStore_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_ListExpiringCertificatesInStore_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_ListExpiringCertificatesInStore_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_ListExpiringCertificatesInStore_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListExpiringCertificatesInRemoteStore">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/ListExpiringCertificatesInRemoteStore" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/ListExpiringCertificatesInRemoteStore" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_ListExpiringCertificatesInRemoteStore_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_ListExpiringCertificatesInRemoteStore_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_ListExpiringCertificatesInRemoteStore_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_ListExpiringCertificatesInRemoteStore_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="PrintCertificateInfo">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/PrintCertificateInfo" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/PrintCertificateInfo" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_PrintCertificateInfo_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_PrintCertificateInfo_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_PrintCertificateInfo_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_PrintCertificateInfo_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EnumCertificatesByStoreName">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/EnumCertificatesByStoreName" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificatesByStoreName" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_EnumCertificatesByStoreName_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_EnumCertificatesByStoreName_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_EnumCertificatesByStoreName_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_EnumCertificatesByStoreName_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EnumCertificates">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/EnumCertificates" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/EnumCertificates" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_EnumCertificates_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_EnumCertificates_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_EnumCertificates_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_EnumCertificates_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="InstallCertificateLocal">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/InstallCertificateLocal" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateLocal" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_InstallCertificateLocal_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_InstallCertificateLocal_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_InstallCertificateLocal_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_InstallCertificateLocal_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="InstallCertificateRemote">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/InstallCertificateRemote" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/InstallCertificateRemote" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_InstallCertificateRemote_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_InstallCertificateRemote_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_InstallCertificateRemote_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_InstallCertificateRemote_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteCertificate">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificate" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificate" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_DeleteCertificate_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_DeleteCertificate_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_DeleteCertificate_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_DeleteCertificate_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteCertificateRemote">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateRemote" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateRemote" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_DeleteCertificateRemote_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_DeleteCertificateRemote_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_DeleteCertificateRemote_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_DeleteCertificateRemote_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteCertificateByThumbprint">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateByThumbprint" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprint" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_DeleteCertificateByThumbprint_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_DeleteCertificateByThumbprint_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_DeleteCertificateByThumbprint_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_DeleteCertificateByThumbprint_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteCertificateByThumbprintRemote">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteCertificateByThumbprintRemote" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/DeleteCertificateByThumbprintRemote" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_DeleteCertificateByThumbprintRemote_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_DeleteCertificateByThumbprintRemote_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_DeleteCertificateByThumbprintRemote_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_DeleteCertificateByThumbprintRemote_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="RemoveCertificateLocal">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/RemoveCertificateLocal" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/RemoveCertificateLocal" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_RemoveCertificateLocal_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_RemoveCertificateLocal_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_RemoveCertificateLocal_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_RemoveCertificateLocal_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CompareCertificatesInStore">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/CompareCertificatesInStore" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/CompareCertificatesInStore" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_CompareCertificatesInStore_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_CompareCertificatesInStore_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_CompareCertificatesInStore_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_CompareCertificatesInStore_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetData">
-      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetData" style="document" />
+      <soap12:operation soapAction="http://Microsoft.ServiceModel.Samples/ICertificate/GetData" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_GetData_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_GetData_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ICalculator_GetData_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ICertificate_GetData_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="CalculatorService">
-    <wsdl:port name="WSHttpBinding_ICalculator" binding="tns:WSHttpBinding_ICalculator">
+  <wsdl:service name="CertificateService">
+    <wsdl:port name="WSHttpBinding_ICertificate" binding="tns:WSHttpBinding_ICertificate">
       <soap12:address location="http://localhost:8000/ServiceModelSamples/service" />
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:8000/ServiceModelSamples/service</wsa10:Address>

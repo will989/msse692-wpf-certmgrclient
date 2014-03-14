@@ -30,7 +30,8 @@ namespace CertificateManagerClient.CertificateManagerPages
             //     wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
 
             //instantiate windows service
-            CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+            //CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+            CertificateService.CertificateClient wsref = new CertificateService.CertificateClient();
             DeleteLabel.Content = "";
 
             

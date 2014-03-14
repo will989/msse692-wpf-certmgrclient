@@ -5,10 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
-using System.Windows.Media;
-using CertificateManagerClient.CertificateManagerService;
 using CertificateManagerClient.CertificateWarehouseService;
 
 
@@ -76,7 +73,8 @@ namespace CertificateManagerClient.CertificateManagerPages
 
 
             //instantiate windows service
-            CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+            //CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+            CertificateService.CertificateClient wsref = new CertificateService.CertificateClient();
 
             //instantiate windows service  -- this gives "The type name 'CertManagerSvc' does not exist in the type... error
             //CertManagerSvc.CertificateManagerClient wsref = new CertManagerSvc.CertificateManagerClient();
@@ -205,7 +203,7 @@ namespace CertificateManagerClient.CertificateManagerPages
                 //        wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
 
                     //instantiate windows service
-                    CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
+                    CertificateService.CertificateClient wsref = new CertificateService.CertificateClient();
                     //CertManagerSvc.CertificateManagerClient wsref = new CertManagerSvc.CertificateManagerClient();
 
             
