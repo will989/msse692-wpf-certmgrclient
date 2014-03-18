@@ -73,7 +73,7 @@
         </Button>
 
             <DataGrid x:Name="CertDataGrid" PreviewKeyDown="Cert_PreviewKeyDown" IsReadOnly="False" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
-  VerticalAlignment="Center" AutoGenerateColumns="True">
+  VerticalAlignment="Center" AutoGenerateColumns="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                </DataGrid>
     </Grid>
     </ScrollViewer>
