@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -87,10 +89,19 @@ namespace CertificateManagerClient.CertificateWarehousePages
                 }
                 CertDataGrid.ItemsSource = certList;
             }
+            catch (WebException webException)
+            {
+                if (webException.Status == WebExceptionStatus.ProtocolError)
+                {
+             log.Error("Caught WebException: {0}", webException);
+                  
+                }
+            }
             catch (EndpointNotFoundException epnfe)
             {
                 System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
                 log.Error("Caught EndpointNotFoundException: {0}", epnfe);
+
             }
             catch (Exception ex)
             {

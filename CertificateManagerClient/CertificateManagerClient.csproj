@@ -33,7 +33,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -252,6 +252,19 @@
     <None Include="Service References\CertificateWarehouseService\CertificateManagerClient.CertificateWarehouseService.Certificate.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouse.wsdl" />
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -259,31 +272,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CertificateService\" />
     <WCFMetadataStorage Include="Service References\CertificateWarehouseService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouse1.wsdl" />
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService41.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService42.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService43.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CertificateWarehouseService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CertificateWarehouseService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CertificateWarehouseService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -322,9 +310,6 @@
     <Resource Include="Images\hero-fpo-about.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService1.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\CertificateService\service.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -335,6 +320,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CertificateService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CertificateWarehouseService\CertificateWarehouseService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CertificateWarehouseService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CertificateWarehouseService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CertificateWarehouseService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

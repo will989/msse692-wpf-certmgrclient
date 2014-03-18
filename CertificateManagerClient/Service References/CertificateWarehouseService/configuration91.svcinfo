@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="TsNHEGo79Eez1HpmAQduYGes5Gk=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="sMMqjNM+kuw6mIQG5IrK00/pLnY=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="CertificateWarehouseService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CertificateWarehouseService" contract="CertificateWarehouseService.ICertificateWarehouseService" bindingType="basicHttpBinding" address="http://win-iv85psjvcob/CertificateWarehouseService.svc" bindingConfiguration="CertificateWarehouseService">
+    <endpoint name="CertificateWarehouseService" contract="CertificateWarehouseService.ICertificateWarehouseService" bindingType="basicHttpBinding" address="http://certmgr.azurewebsites.net/CertificateWarehouseService.svc" bindingConfiguration="CertificateWarehouseService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://win-iv85psjvcob/CertificateWarehouseService.svc</serializedValue>
+          <serializedValue>http://certmgr.azurewebsites.net/CertificateWarehouseService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

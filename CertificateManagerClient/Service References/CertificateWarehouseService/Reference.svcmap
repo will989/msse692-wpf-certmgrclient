@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6d53cb0f-6db7-40ca-a2e6-2b67edc2567b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ac4d2793-2ef6-41de-b53b-421229b4ae4e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://win-iv85psjvcob/CertificateWarehouseService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://certmgr.azurewebsites.net/CertificateWarehouseService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CertificateWarehouseService4.xsd" MetadataType="Schema" ID="99cabb3b-ddbc-4f85-acf7-f601a191383b" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CertificateWarehouse1.wsdl" MetadataType="Wsdl" ID="31e28825-2166-4f6b-ac77-8608dc174ed7" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?wsdl" />
-    <MetadataFile FileName="CertificateWarehouseService41.xsd" MetadataType="Schema" ID="ed5ba04b-509b-44b1-aae5-2cc9216d9f6a" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CertificateWarehouseService42.xsd" MetadataType="Schema" ID="d0392e48-1f30-464a-9cd8-7d422ac695d0" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?xsd=xsd3" />
-    <MetadataFile FileName="CertificateWarehouseService1.disco" MetadataType="Disco" ID="6133211e-8aee-4eff-8732-afa20668805e" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?disco" />
-    <MetadataFile FileName="CertificateWarehouseService43.xsd" MetadataType="Schema" ID="bdb8bd65-cda3-478c-8161-6e3c2af9a53e" SourceId="1" SourceUrl="http://win-iv85psjvcob/CertificateWarehouseService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CertificateWarehouseService.xsd" MetadataType="Schema" ID="680bc34e-0abf-4387-b43c-c56c911830d7" SourceId="1" SourceUrl="http://certmgr.azurewebsites.net/CertificateWarehouseService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CertificateWarehouseService1.xsd" MetadataType="Schema" ID="c2dec538-075c-422f-9686-36671a190ab4" SourceId="1" SourceUrl="http://certmgr.azurewebsites.net/CertificateWarehouseService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CertificateWarehouseService2.xsd" MetadataType="Schema" ID="1b8f6646-2377-4ae5-b20d-4974db63575a" SourceId="1" SourceUrl="http://certmgr.azurewebsites.net/CertificateWarehouseService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CertificateWarehouseService3.xsd" MetadataType="Schema" ID="264bebaf-cf81-43b0-9283-0dbc62afb3f1" SourceId="1" SourceUrl="http://certmgr.azurewebsites.net/CertificateWarehouseService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CertificateWarehouse.wsdl" MetadataType="Wsdl" ID="5ef9f7a4-c403-4fb2-b423-dbeb00871a7c" SourceId="1" SourceUrl="http://certmgr.azurewebsites.net/CertificateWarehouseService.svc?wsdl" />
+    <MetadataFile FileName="CertificateWarehouseService.disco" MetadataType="Disco" ID="fff9bf1e-9bb9-4e1e-9644-8abdfe46899c" SourceId="1" SourceUrl="http://certmgr.azurewebsites.net/CertificateWarehouseService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
