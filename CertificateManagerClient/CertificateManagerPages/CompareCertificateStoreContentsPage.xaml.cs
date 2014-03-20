@@ -29,7 +29,6 @@ namespace CertificateManagerClient.CertificateManagerPages
             //     wsref = new CertificateManagerService.CertificateManagerServiceClient();
 
             //instantiate windows service client
-            //CalculatorService.CalculatorClient wsref = new CalculatorService.CalculatorClient();
             CertificateService.CertificateClient wsref = new CertificateService.CertificateClient();
             CertificateService.CertificateClient wsref2 = new CertificateService.CertificateClient();
             CertificateService.CertificateClient wsref3 = new CertificateService.CertificateClient();
@@ -75,20 +74,23 @@ namespace CertificateManagerClient.CertificateManagerPages
 
             if (ServerName.Text.Length > 3 && !ServerName.Text.Equals(""))
             {
-                serverName = ServerName2.Text;
+                serverName = ServerName.Text;
             }
             else
             {
-                serverName = "7000Laptop";
+                log.Error("Did not get a good serverName for server1");
+                MessageBox.Show("Enter a good server name for server1");
+                
             }
 
-            if (ServerName2.Text.Length < 3 || ServerName2.Text.Equals(""))
+            if (ServerName2.Text.Length > 3 && !ServerName2.Text.Equals(""))
             {
                 serverName2 = ServerName2.Text;
             }
             else
             {
-                serverName2 = "7000Laptop";
+                log.Error("Did not get a good serverName for server2");
+                MessageBox.Show("Enter a good server name for server2");
             }
 
             System.Diagnostics.Debug.WriteLine("serverName = {0}", serverName);
@@ -127,12 +129,9 @@ namespace CertificateManagerClient.CertificateManagerPages
                 wsref.Close();
             }
 
-
-
             try
             {
                 
-
                 //http://stackoverflow.com/questions/16716247/wcf-service-timeout-setting
                 //try setting timeout to 2 minutes
                 wsref2.InnerChannel.OperationTimeout = new TimeSpan(0, 2, 0);
@@ -161,14 +160,14 @@ namespace CertificateManagerClient.CertificateManagerPages
                 wsref2.Close();
             }
 
-
+            
             //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
                 //try to retrieve certificates from a remote CA
 
             try
             {
                 log.Debug("right before CompareCertificatesInStore call");
-                wsref3.InnerChannel.OperationTimeout = new TimeSpan(0, 2, 0);
+                wsref3.InnerChannel.OperationTimeout = new TimeSpan(0, 5, 0);
                 wsref3.Open();
                 List<X509Certificate2> certList =
                     new List<X509Certificate2>(wsref3.CompareCertificatesInStore(newStoreName, storeLocation, serverName,
