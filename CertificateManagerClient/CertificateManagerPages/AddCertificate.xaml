@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:certificateManagerClient="clr-namespace:CertificateManagerClient"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="300"
+      d:DesignHeight="600" d:DesignWidth="600"
 	Title="AddCertificate">
     <Page.Resources>
         <ObjectDataProvider x:Key="MyCertificateProvider"/>

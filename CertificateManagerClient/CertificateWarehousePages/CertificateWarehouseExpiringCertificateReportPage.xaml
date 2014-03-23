@@ -7,7 +7,7 @@
       xmlns:p="clr-namespace:System;assembly=mscorlib"
       xmlns:generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="300" d:DesignWidth="600"
 	Title="CertificateWarehouse - Expiring Certificates in Database">
 
     <ScrollViewer Grid.Row="1">
@@ -59,7 +59,7 @@
 
         
         <Label Name="ExpCertDaysLabel" Content="* Certificates Expiring Within...Days" HorizontalAlignment="Right" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="7" Visibility="Visible" ToolTip="Find certificates that expire within this number days"></Label>
-        <TextBox Name="ExpCertDays" Margin="5" Grid.Column="1" Grid.Row="7" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <TextBox Name="ExpCertDays" Margin="5" Grid.Column="1" Grid.Row="7" Width="75" HorizontalAlignment="Left" Visibility="Visible" FontSize="11" Text=""></TextBox>
 
 
         <Button x:Name ="ListExpCertButton" Content="Get Expiring Certificates" Width="250" Height="25" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" Click ="ListCertButton_Click">

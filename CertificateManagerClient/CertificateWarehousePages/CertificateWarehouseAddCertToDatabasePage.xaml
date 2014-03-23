@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="300" d:DesignWidth="600"
 	Title="Certificate Warhouse - Add Certificate to Database">
     <Page.Resources>
         <ObjectDataProvider x:Key="MyCertificateProvider"/>
@@ -72,7 +72,7 @@
             <Label Name ="TitleLabel" FontSize="16" Content="Add a Certificate to the Database"/>
         </TextBlock>
         <TextBox Name="CertChooser" Grid.Column="1" Grid.Row="4" FontSize="12" Text=""></TextBox>
-        <Button Content="* Choose certificate" FontWeight="Bold" Width="100" Height="25" Click="Button_Click" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Margin="5"/>
+        <Button Content="* Choose certificate" FontWeight="Bold" Width="125" Height="25" Click="Button_Click" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Margin="5"/>
         <TextBox Name="CertName" Margin="5" Grid.Column="1" Grid.Row="5" FontSize="12" Text=""></TextBox>
         <Label Name="CertNameLabel" Content="Certificate Name" Margin="5" Grid.Column="0" Grid.Row="5" ToolTip="The certificate name from the SubjectName.Name attribute"></Label>
         <TextBox Name="StartDate" Margin="5" Grid.Column="1" Grid.Row="6" FontSize="12" Text=""></TextBox>

@@ -7,7 +7,7 @@
       xmlns:p="clr-namespace:System;assembly=mscorlib"
       xmlns:generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
       mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="300"
+      d:DesignHeight="400" d:DesignWidth="600"
 	Title="CertificateManager - Delete a Certificate from a Certificate Store">
 
     <ScrollViewer Grid.Row="1">
