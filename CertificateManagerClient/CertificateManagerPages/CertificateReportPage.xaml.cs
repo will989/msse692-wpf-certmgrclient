@@ -12,15 +12,16 @@ namespace CertificateManagerClient.CertificateManagerPages
     /// Interaction logic for CertificateReportPage.xaml
     /// </summary>
     public partial class CertificateReportPage : Page
-        {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+    {
+        private static readonly log4net.ILog log =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public CertificateReportPage()
         {
             InitializeComponent();
             log.Debug("In CertificateReportPage InitializeComponent");
-
         }
-        
+
 
         private void ListCertButton_Click(object sender, RoutedEventArgs e)
         {
@@ -44,57 +45,59 @@ namespace CertificateManagerClient.CertificateManagerPages
                 switch (index)
                 {
                     case 0:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                     case 1:
-                        {
-                            newStoreName = "My";
-                            break;
-                        }
+                    {
+                        newStoreName = "My";
+                        break;
+                    }
                     case 2:
-                        {
-                            newStoreName = "Root";
-                            break;
-                        }
+                    {
+                        newStoreName = "Root";
+                        break;
+                    }
                     case 3:
-                        {
-                            newStoreName = "AuthRoot";
-                            break;
-                        }
+                    {
+                        newStoreName = "AuthRoot";
+                        break;
+                    }
                     default:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                 }
-            }//end if
+            } //end if
             //hard-coded since Local User only works on the local machine
-                var storeLocation = StoreLocation.LocalMachine;
+            var storeLocation = StoreLocation.LocalMachine;
 
             if (ServerName.Text.Length > 3 && !ServerName.Text.Equals(""))
             {
                 serverName = ServerName.Text;
-                 try
-            {
-                certList = new List<X509Certificate2>(wsref.ListCertificatesInRemoteStore(newStoreName, storeLocation, serverName));
+                try
+                {
+                    certList =
+                        new List<X509Certificate2>(wsref.ListCertificatesInRemoteStore(newStoreName, storeLocation,
+                            serverName));
 
-                //should be greater than 0
-                int size = certList.Count;
-                System.Diagnostics.Debug.WriteLine("certList count = {0}", size);
-                CertDataGrid.ItemsSource = certList;
-            }
-                 catch (EndpointNotFoundException epnfe)
-                 {
-                     System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
-                     log.Error("Caught EndpointNotFoundException: {0}", epnfe);
-                 }
-                 catch (Exception ex)
-                 {
-                     System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
-                     log.Error("Caught Exception: {0}", ex);
-                 }
+                    //should be greater than 0
+                    int size = certList.Count;
+                    System.Diagnostics.Debug.WriteLine("certList count = {0}", size);
+                    CertDataGrid.ItemsSource = certList;
+                }
+                catch (EndpointNotFoundException epnfe)
+                {
+                    System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
+                    log.Error("Caught EndpointNotFoundException: {0}", epnfe);
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
+                    log.Error("Caught Exception: {0}", ex);
+                }
             }
             else
             {
@@ -123,14 +126,10 @@ namespace CertificateManagerClient.CertificateManagerPages
             System.Diagnostics.Debug.WriteLine("serverName = {0}", serverName);
             System.Diagnostics.Debug.WriteLine("newStoreName = {0}", newStoreName);
             System.Diagnostics.Debug.WriteLine("storeLocation = {0}", storeLocation.ToString());
-                
 
 
-                //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
-                //try to retrieve certificates from a remote CA
-
-           
-           
+            //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
+            //try to retrieve certificates from a remote CA
         }
 
         private void FrameworkElement_OnLoaded(object sender, RoutedEventArgs e)
@@ -139,16 +138,19 @@ namespace CertificateManagerClient.CertificateManagerPages
             var grid = sender as DataGrid;
             if (grid != null) grid.ItemsSource = items;
         }
-    
+
 
         private void Cert_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs keyEventArgs)
         {
             if (keyEventArgs.Key == Key.Delete)
             {
-                var grid = (DataGrid)sender;
+                var grid = (DataGrid) sender;
                 if (grid.SelectedItems.Count > 0)
                 {
-                    var Res = MessageBox.Show("Are you sure you want to delete " + grid.SelectedItems.Count + " Certificates?", "Deleting Records", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    var Res =
+                        MessageBox.Show(
+                            "Are you sure you want to delete " + grid.SelectedItems.Count + " Certificates?",
+                            "Deleting Records", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
                     if (Res == MessageBoxResult.Yes)
                     {
                         foreach (var row in grid.SelectedItems)
@@ -169,7 +171,5 @@ namespace CertificateManagerClient.CertificateManagerPages
                 }
             }
         }
-
     }
-    }
-
+}

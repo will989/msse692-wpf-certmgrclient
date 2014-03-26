@@ -16,24 +16,23 @@ namespace CertificateManagerClient.CertificateWarehousePages
         public CertificateWarehouseExpiringCertificateReportPage()
         {
             InitializeComponent();
-
         }
-        
+
 
         private void ListCertButton_Click(object sender, RoutedEventArgs e)
         {
             //instantiate web service
             CertificateWarehouseService.CertificateWarehouseServiceClient
-                 wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
-            
+                wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
+
             int expirationDays = Convert.ToInt32(ExpCertDays.Text);
-           
-   
+
+
             System.Diagnostics.Debug.WriteLine("# of days = {0}", expirationDays);
-                
-            
-                //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
-                //try to retrieve certificates from a remote CA
+
+
+            //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
+            //try to retrieve certificates from a remote CA
 
             try
             {
@@ -62,5 +61,4 @@ namespace CertificateManagerClient.CertificateWarehousePages
             if (grid != null) grid.ItemsSource = items;
         }
     }
-    }
-
+}

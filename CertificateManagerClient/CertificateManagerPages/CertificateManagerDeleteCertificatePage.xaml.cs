@@ -13,15 +13,15 @@ namespace CertificateManagerClient.CertificateManagerPages
     /// </summary>
     public partial class CertificateManagerDeleteCertificatePage : Page
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly log4net.ILog log =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public CertificateManagerDeleteCertificatePage()
         {
             InitializeComponent();
             log.Debug("In CertificateManager DeleteCertificate Page InitializeComponent");
-            
-
         }
-        
+
 
         private void DeleteCertButton_Click(object sender, RoutedEventArgs e)
         {
@@ -34,10 +34,10 @@ namespace CertificateManagerClient.CertificateManagerPages
             CertificateService.CertificateClient wsref = new CertificateService.CertificateClient();
             DeleteLabel.Content = "";
 
-            
+
             string thumbprint = null;
             string certName = null;
-            
+
             bool removed = false;
             string newStoreName = null;
             string serverName = ServerName.Text;
@@ -48,34 +48,34 @@ namespace CertificateManagerClient.CertificateManagerPages
                 switch (index)
                 {
                     case 0:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                     case 1:
-                        {
-                            newStoreName = "My";
-                            break;
-                        }
+                    {
+                        newStoreName = "My";
+                        break;
+                    }
                     case 2:
-                        {
-                            newStoreName = "Root";
-                            break;
-                        }
+                    {
+                        newStoreName = "Root";
+                        break;
+                    }
                     case 3:
-                        {
-                            newStoreName = "AuthRoot";
-                            break;
-                        }
+                    {
+                        newStoreName = "AuthRoot";
+                        break;
+                    }
                     default:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                 }
-            }//end if
+            } //end if
 
-            //else just make the default "CA"
+                //else just make the default "CA"
             else
             {
                 newStoreName = "CA";
@@ -89,12 +89,14 @@ namespace CertificateManagerClient.CertificateManagerPages
                 if (thumbprint.Length >= 1)
                 {
                     log.Debug("In Thumbprint.Text.Length...calling ");
-                    removed = wsref.DeleteCertificateByThumbprintRemote(thumbprint, newStoreName, StoreLocation.LocalMachine, serverName);
+                    removed = wsref.DeleteCertificateByThumbprintRemote(thumbprint, newStoreName,
+                        StoreLocation.LocalMachine, serverName);
                 }
                 else if (certName.Length >= 1)
                 {
                     log.Debug("In CertName.Text.Length...calling ");
-                    removed = wsref.DeleteCertificateRemote(certName, newStoreName, StoreLocation.LocalMachine, serverName);
+                    removed = wsref.DeleteCertificateRemote(certName, newStoreName, StoreLocation.LocalMachine,
+                        serverName);
                 }
 
                 if (removed)
@@ -109,7 +111,6 @@ namespace CertificateManagerClient.CertificateManagerPages
                     DeleteLabel.Content = "Unable to remove certificate.";
                     MessageBox.Show("Unable to remove certificate.");
                 }
-
             }
             catch (EndpointNotFoundException epnfe)
             {
@@ -121,7 +122,6 @@ namespace CertificateManagerClient.CertificateManagerPages
                 System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
                 log.Error("Caught Exception: {0}", ex);
             }
-            
         }
 
         private void FrameworkElement_OnLoaded(object sender, RoutedEventArgs e)
@@ -131,5 +131,4 @@ namespace CertificateManagerClient.CertificateManagerPages
             if (grid != null) grid.ItemsSource = items;
         }
     }
-    }
-
+}

@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using CertificateManagerClient.CertificateWarehouseService;
 
 namespace CertificateManagerClient.CertificateWarehousePages
-    
+
 {
     /// <summary>
     /// Interaction logic for CertificateReportPage.xaml
@@ -16,15 +16,14 @@ namespace CertificateManagerClient.CertificateWarehousePages
         public CertificateWarehouseDeleteCertificatePage()
         {
             InitializeComponent();
-
         }
-        
+
 
         private void DeleteCertButton_Click(object sender, RoutedEventArgs e)
         {
             //instantiate web service
             CertificateWarehouseService.CertificateWarehouseServiceClient
-                 wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
+                wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
 
             DeleteLabel.Content = "";
 
@@ -39,10 +38,10 @@ namespace CertificateManagerClient.CertificateWarehousePages
                 {
                     removed = wsref.RemoveCertificateFromDatabase(Thumbprint.Text);
                 }
-                
-                
+
+
                 System.Diagnostics.Debug.WriteLine("Thumbprint = {0}", MyCertificate.Thumbprint);
-                
+
                 //from here:  http://www.codeproject.com/Articles/321899/DataContext-in-WPF
                 if (removed)
                 {
@@ -72,5 +71,4 @@ namespace CertificateManagerClient.CertificateWarehousePages
             if (grid != null) grid.ItemsSource = items;
         }
     }
-    }
-
+}

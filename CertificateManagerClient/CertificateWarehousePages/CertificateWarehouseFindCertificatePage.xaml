@@ -1,38 +1,38 @@
 ﻿<Page x:Class="CertificateManagerClient.CertificateWarehousePages.CertificateWarehouseFindCertificatePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:s="clr-namespace:System.Collections;assembly=mscorlib"
       xmlns:p="clr-namespace:System;assembly=mscorlib"
       xmlns:generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
       d:DesignHeight="400" d:DesignWidth="600"
-	Title="CertificateManager - Find Certificates in Database">
+      Title="CertificateManager - Find Certificates in Database">
 
     <ScrollViewer Grid.Row="1">
         <Grid Background="AliceBlue">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="300" />
             </Grid.ColumnDefinitions>
             <Image Width="300">
                 <Image.Source>
@@ -43,63 +43,78 @@
      the size that is displayed. -->
                     <!-- Note: In order to preserve aspect ratio, only set either DecodePixelWidth
          or DecodePixelHeight but not both. -->
-                    <BitmapImage DecodePixelWidth="200"  
-     UriSource="..\Images\hero-fpo-about.jpg" />
+                    <BitmapImage DecodePixelWidth="200"
+                                 UriSource="..\Images\hero-fpo-about.jpg" />
                 </Image.Source>
             </Image>
             <Border BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0">
                 <TextBlock>
-         <Hyperlink>Certificate Manager Home    
-             <Hyperlink.NavigateUri>..\CertificateManagerHome.xaml</Hyperlink.NavigateUri>
-         </Hyperlink>
-         <Hyperlink>Certificate Report Page    
-             <Hyperlink.NavigateUri>..\CertificateManagerPages\CertificateReportPage.xaml</Hyperlink.NavigateUri>
-         </Hyperlink>
-               <Hyperlink>     Add Certificate Page
-             <Hyperlink.NavigateUri>..\CertificateManagerPages\AddCertificate.xaml</Hyperlink.NavigateUri>
-         </Hyperlink>
-         <Hyperlink>      Expiring Certificate Report Page
-             <Hyperlink.NavigateUri>..\CertificateManagerPages\ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
-         </Hyperlink>
+                    <Hyperlink>
+                        Certificate Manager Home
+                        <Hyperlink.NavigateUri>..\CertificateManagerHome.xaml</Hyperlink.NavigateUri>
+                    </Hyperlink>
+                    <Hyperlink>
+                        Certificate Report Page
+                        <Hyperlink.NavigateUri>..\CertificateManagerPages\CertificateReportPage.xaml</Hyperlink.NavigateUri>
+                    </Hyperlink>
+                    <Hyperlink>
+                        Add Certificate Page
+                        <Hyperlink.NavigateUri>..\CertificateManagerPages\AddCertificate.xaml</Hyperlink.NavigateUri>
+                    </Hyperlink>
+                    <Hyperlink>
+                        Expiring Certificate Report Page
+                        <Hyperlink.NavigateUri>..\CertificateManagerPages\ExpiringCertificateReportPage.xaml</Hyperlink.NavigateUri>
+                    </Hyperlink>
                 </TextBlock>
             </Border>
 
-            <Label Name="ThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible" ToolTip="The thumbprint of the certificate we wish to find"></Label>
-            <TextBox Name="Thumbprint" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="ThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="0" Grid.Row="2"
+                   Visibility="Visible" ToolTip="The thumbprint of the certificate we wish to find" />
+            <TextBox Name="Thumbprint" Margin="5" Grid.Column="1" Grid.Row="2" Visibility="Visible" FontSize="11"
+                     Text="" />
 
-            <Label Name="CertNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible" ToolTip="The name of the certificate we want to find."></Label>
-            <TextBox Name="CertName" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="CertNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="0" Grid.Row="3"
+                   Visibility="Visible" ToolTip="The name of the certificate we want to find." />
+            <TextBox Name="CertName" Margin="5" Grid.Column="1" Grid.Row="3" Visibility="Visible" FontSize="11" Text="" />
 
-            <Label Name="MongoIdLabel" Content="Mongo Id of Certificate" Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Visible" ToolTip="The Mongo _id property as a string."></Label>
-            <TextBox Name="MongoId" Margin="5" Grid.Column="1" Grid.Row="4" Visibility="Visible" FontSize="11" Text=""></TextBox>
+            <Label Name="MongoIdLabel" Content="Mongo Id of Certificate" Margin="5" Grid.Column="0" Grid.Row="4"
+                   Visibility="Visible" ToolTip="The Mongo _id property as a string." />
+            <TextBox Name="MongoId" Margin="5" Grid.Column="1" Grid.Row="4" Visibility="Visible" FontSize="11" Text="" />
 
 
-            <Button x:Name ="FindCertButton" Content="Find Certificate" Width="100" Height="25" Grid.Column="0" Grid.Row="6" Click ="FindCertButton_Click">
-            </Button>
+            <Button x:Name="FindCertButton" Content="Find Certificate" Width="100" Height="25" Grid.Column="0"
+                    Grid.Row="6" Click="FindCertButton_Click" />
 
-            <Grid x:Name="CertDataGrid"  Grid.Column="0" Grid.Row="7" Grid.RowSpan="6">
+            <Grid x:Name="CertDataGrid" Grid.Column="0" Grid.Row="7" Grid.RowSpan="6">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="500"/>
-                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="500" />
+                    <ColumnDefinition Width="500" />
                 </Grid.ColumnDefinitions>
-                <Label Name="CertificateDetailsLabel" Content="Found Certificate Details" FontWeight="Bold" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2"></Label>
-                <Label Name="CertificateNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="0" Grid.Row="1" Visibility="Visible"></Label>
-                <Label Name= "CertificateNameTextBox" Content="{Binding Path=Name}" Grid.Column="1" Grid.Row="1"></Label>
-                <Label Name="CertificateThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="0" Grid.Row="2" Visibility="Visible"></Label>
-                <Label Name= "CertificateThumbprintTextBox" Content="{Binding Path=Thumbprint}" Grid.Column="1" Grid.Row="2" />
-                <Label Name="CertificateStartDtLabel" Content="Start Date of Certificate" Margin="5" Grid.Column="0" Grid.Row="3" Visibility="Visible"></Label>
-                <Label Name="CertificateStartDtTextBox"  Content="{Binding Path=StartDate}" Grid.Column="1" Grid.Row="3"></Label>
-                <Label Name="CertificateExpDtLabel" Content="Expiration Date of Certificate" Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Visible"></Label>
-                <Label Name="CertificateExpDtTextBox" Content="{Binding Path=ExpirationDate}" Grid.Column="1" Grid.Row="4" />
-               
+                <Label Name="CertificateDetailsLabel" Content="Found Certificate Details" FontWeight="Bold"
+                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+                <Label Name="CertificateNameLabel" Content="Name of Certificate" Margin="5" Grid.Column="0"
+                       Grid.Row="1" Visibility="Visible" />
+                <Label Name="CertificateNameTextBox" Content="{Binding Path=Name}" Grid.Column="1" Grid.Row="1" />
+                <Label Name="CertificateThumbprintLabel" Content="Thumbprint of Certificate" Margin="5" Grid.Column="0"
+                       Grid.Row="2" Visibility="Visible" />
+                <Label Name="CertificateThumbprintTextBox" Content="{Binding Path=Thumbprint}" Grid.Column="1"
+                       Grid.Row="2" />
+                <Label Name="CertificateStartDtLabel" Content="Start Date of Certificate" Margin="5" Grid.Column="0"
+                       Grid.Row="3" Visibility="Visible" />
+                <Label Name="CertificateStartDtTextBox" Content="{Binding Path=StartDate}" Grid.Column="1" Grid.Row="3" />
+                <Label Name="CertificateExpDtLabel" Content="Expiration Date of Certificate" Margin="5" Grid.Column="0"
+                       Grid.Row="4" Visibility="Visible" />
+                <Label Name="CertificateExpDtTextBox" Content="{Binding Path=ExpirationDate}" Grid.Column="1"
+                       Grid.Row="4" />
+
             </Grid>
         </Grid>
     </ScrollViewer>

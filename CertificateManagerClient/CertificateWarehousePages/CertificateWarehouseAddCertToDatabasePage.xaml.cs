@@ -18,25 +18,25 @@ namespace CertificateManagerClient.CertificateWarehousePages
             InitializeComponent();
             Item = new Certificate();
         }
+
         //from here:  http://social.msdn.microsoft.com/Forums/vstudio/en-US/29b08a8a-9879-401d-92d6-181a93f3c792/select-a-file-in-a-wpf-application?forum=wpf
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
 
-             System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
-
-             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-             {
-                 this.CertChooser.Text = ofd.FileName;
-             }
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                this.CertChooser.Text = ofd.FileName;
+            }
 
             try
             {
-               
+
                 {
                     //load certificate from selected file
                     X509Certificate2 loadedCertificate = new X509Certificate2(ofd.FileName);
                     System.Diagnostics.Debug.WriteLine("Reading Client Certificate Information");
-                    
+
                     //null check to make sure certificate was loaded, then populate form
                     if (loadedCertificate.SubjectName.Name != null) CertName.Text = loadedCertificate.SubjectName.Name;
                     else
@@ -49,8 +49,6 @@ namespace CertificateManagerClient.CertificateWarehousePages
                     Thumbprint.Text = loadedCertificate.Thumbprint;
                     //try storing content this way (http://www.dotnetperls.com/convert-string-byte-array)
                     CertContent.Text = Encoding.ASCII.GetString(loadedCertificate.RawData);
-
-
                 }
             }
             catch (Exception ex)
@@ -81,15 +79,14 @@ namespace CertificateManagerClient.CertificateWarehousePages
                     objectDataProvider.ObjectInstance = value;
             }
         }
- 
+
 
         private void SaveCertButton_Click(object sender, RoutedEventArgs e)
         {
-
             //instantiate web service
             CertificateWarehouseService.CertificateWarehouseServiceClient
                 wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
-            
+
             //new CertificateManager Certificate
             Certificate certificate = new Certificate();
             certificate.Name = CertName.Text;
@@ -97,7 +94,7 @@ namespace CertificateManagerClient.CertificateWarehousePages
             certificate.EndDate = Convert.ToDateTime(EndDate.Text);
             if (IsDeleted.IsChecked != null && (bool) IsDeleted.IsChecked)
             {
-                certificate.IsDeleted = (bool)IsDeleted.IsChecked;  
+                certificate.IsDeleted = (bool) IsDeleted.IsChecked;
             }
             else
             {
@@ -107,8 +104,8 @@ namespace CertificateManagerClient.CertificateWarehousePages
             certificate.Thumbprint = Thumbprint.Text;
             //try converting certificate content from text back to bytes (http://www.dotnetperls.com/convert-string-byte-array)
             certificate.Content = Encoding.ASCII.GetBytes(CertContent.Text);
-            
-        bool added = wsref.AddCertificateToDatabase(certificate);
+
+            bool added = wsref.AddCertificateToDatabase(certificate);
 
             if (added)
             {
@@ -123,18 +120,14 @@ namespace CertificateManagerClient.CertificateWarehousePages
                 AddCertLabel.Content = "Unable to add Certificate.";
                 MessageBox.Show("Unable to add Certificate.");
             }
-
         }
 
 
         private void IsDeleted_OnChecked_Checked(object sender, RoutedEventArgs e)
         {
             {
-
                 IsDeleted.Content = "Checked";
-
             }
-
         }
 
         private void IsDeleted_Unchecked(object sender, RoutedEventArgs e)
@@ -142,4 +135,4 @@ namespace CertificateManagerClient.CertificateWarehousePages
             IsDeleted.Content = "Unchecked";
         }
     }
-    }
+}

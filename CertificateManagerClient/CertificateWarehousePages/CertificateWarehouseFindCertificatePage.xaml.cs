@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using CertificateManagerClient.CertificateWarehouseService;
 
 namespace CertificateManagerClient.CertificateWarehousePages
-    
+
 {
     /// <summary>
     /// Interaction logic for CertificateReportPage.xaml
@@ -16,15 +16,14 @@ namespace CertificateManagerClient.CertificateWarehousePages
         public CertificateWarehouseFindCertificatePage()
         {
             InitializeComponent();
-
         }
-        
+
 
         private void FindCertButton_Click(object sender, RoutedEventArgs e)
         {
             //instantiate web service
             CertificateWarehouseService.CertificateWarehouseServiceClient
-                 wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
+                wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
 
             Certificate MyCertificate = new Certificate();
             string thumbprint = null;
@@ -70,5 +69,4 @@ namespace CertificateManagerClient.CertificateWarehousePages
             if (grid != null) grid.ItemsSource = items;
         }
     }
-    }
-
+}

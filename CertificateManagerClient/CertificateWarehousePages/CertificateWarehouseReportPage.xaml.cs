@@ -14,21 +14,20 @@ namespace CertificateManagerClient.CertificateWarehousePages
     /// </summary>
     public partial class CertificateWarehouseReportPage : Page
     {
-
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly log4net.ILog log =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public CertificateWarehouseReportPage()
         {
             InitializeComponent();
-
         }
-        
+
 
         private void ListCertButton_Click(object sender, RoutedEventArgs e)
         {
             //instantiate web service
             CertificateWarehouseService.CertificateWarehouseServiceClient
-                 wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
+                wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
 
             log.Debug("after wsref in CertificateWarehouseReportPage");
 
@@ -40,7 +39,7 @@ namespace CertificateManagerClient.CertificateWarehousePages
             {
                 limit = Convert.ToInt32(Limit.Text);
             }
-            else 
+            else
                 limit = 1000;
 
             if (int.TryParse(Skip.Text, out skip))
@@ -67,15 +66,17 @@ namespace CertificateManagerClient.CertificateWarehousePages
             System.Diagnostics.Debug.WriteLine("Skip = {0}", skip);
 
             //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
-                //try to retrieve certificates from a remote CA
+            //try to retrieve certificates from a remote CA
 
             try
             {
-                log.Debug("before List<Certificate> certList = new List<Certificate>(wsref.GetCertificatesDetails(limit, skip));");
+                log.Debug(
+                    "before List<Certificate> certList = new List<Certificate>(wsref.GetCertificatesDetails(limit, skip));");
                 List<Certificate> certList =
                     new List<Certificate>(wsref.GetCertificatesDetails(limit, skip));
-                log.Debug("after List<Certificate> certList = new List<Certificate>(wsref.GetCertificatesDetails(limit, skip));");
-                
+                log.Debug(
+                    "after List<Certificate> certList = new List<Certificate>(wsref.GetCertificatesDetails(limit, skip));");
+
                 //should be greater than 0
                 int size = certList.Count;
                 System.Diagnostics.Debug.WriteLine("certList count = {0}", size);
@@ -84,8 +85,6 @@ namespace CertificateManagerClient.CertificateWarehousePages
                 {
                     System.Diagnostics.Debug.WriteLine("ObjectId = {0}", certificate.Id.ToString());
                     log.Debug("in foreach (Certificate certificate in certList");
-
-                    
                 }
                 CertDataGrid.ItemsSource = certList;
             }
@@ -93,15 +92,13 @@ namespace CertificateManagerClient.CertificateWarehousePages
             {
                 if (webException.Status == WebExceptionStatus.ProtocolError)
                 {
-             log.Error("Caught WebException: {0}", webException);
-                  
+                    log.Error("Caught WebException: {0}", webException);
                 }
             }
             catch (EndpointNotFoundException epnfe)
             {
                 System.Diagnostics.Debug.WriteLine("EndpointNotFoundException caught: {0}", epnfe);
                 log.Error("Caught EndpointNotFoundException: {0}", epnfe);
-
             }
             catch (Exception ex)
             {
@@ -117,5 +114,4 @@ namespace CertificateManagerClient.CertificateWarehousePages
             if (grid != null) grid.ItemsSource = items;
         }
     }
-    }
-
+}

@@ -12,14 +12,15 @@ namespace CertificateManagerClient.CertificateManagerPages
     /// </summary>
     public partial class ExpiringCertificateReportPage : Page
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly log4net.ILog log =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public ExpiringCertificateReportPage()
         {
             InitializeComponent();
             log.Debug("In ExpiringCertificateReportPage InitializeComponent");
-
         }
-        
+
 
         private void ListCertButton_Click(object sender, RoutedEventArgs e)
         {
@@ -66,12 +67,12 @@ namespace CertificateManagerClient.CertificateManagerPages
                         break;
                     }
                 }
-            }//end if
+            } //end if
 
             //hard-coded since Local User only works on the local machine
-                var storeLocation = StoreLocation.LocalMachine;
+            var storeLocation = StoreLocation.LocalMachine;
 
-                if (ServerName.Text.Length > 3 && !ServerName.Text.Equals(""))
+            if (ServerName.Text.Length > 3 && !ServerName.Text.Equals(""))
             {
                 serverName = ServerName.Text;
                 try
@@ -97,7 +98,6 @@ namespace CertificateManagerClient.CertificateManagerPages
                     System.Diagnostics.Debug.WriteLine("Exception caught: {0}", ex);
                     log.Error("Caught Exception: {0}", ex);
                 }
-
             }
             else
             {
@@ -105,7 +105,8 @@ namespace CertificateManagerClient.CertificateManagerPages
                 try
                 {
                     List<X509Certificate2> expCertList =
-                        new List<X509Certificate2>(wsref.ListExpiringCertificatesInStore(newStoreName, storeLocation, expirationDays));
+                        new List<X509Certificate2>(wsref.ListExpiringCertificatesInStore(newStoreName, storeLocation,
+                            expirationDays));
 
                     //should be greater than 0
                     int size = expCertList.Count;
@@ -124,19 +125,15 @@ namespace CertificateManagerClient.CertificateManagerPages
                 }
             }
 
-            
-           
+
             System.Diagnostics.Debug.WriteLine("serverName = {0}", serverName);
             System.Diagnostics.Debug.WriteLine("newStoreName = {0}", newStoreName);
             System.Diagnostics.Debug.WriteLine("storeLocation = {0}", storeLocation.ToString());
             System.Diagnostics.Debug.WriteLine("# of days = {0}", expirationDays);
-                
 
 
-                //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
-                //try to retrieve certificates from a remote CA
-
-            
+            //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
+            //try to retrieve certificates from a remote CA
         }
 
         private void FrameworkElement_OnLoaded(object sender, RoutedEventArgs e)
@@ -146,5 +143,4 @@ namespace CertificateManagerClient.CertificateManagerPages
             if (grid != null) grid.ItemsSource = items;
         }
     }
-    }
-
+}

@@ -14,23 +14,22 @@ namespace CertificateManagerClient.CertificateManagerPages
     /// <summary>
     /// Interaction logic for AddCertificate.xaml
     /// </summary>
-    
     public partial class AddCertificate : Page
     {
         //Here is the once-per-class call to initialize the log object
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly log4net.ILog log =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         private X509Certificate2 _loadedCertificate = new X509Certificate2();
 
         public AddCertificate()
         {
             InitializeComponent();
             log.Debug("In AddCertificate");
-         
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
             AddCertLabel.Content = "";
 
@@ -57,7 +56,6 @@ namespace CertificateManagerClient.CertificateManagerPages
                 Thumbprint.Text = _loadedCertificate.Thumbprint;
                 //try storing content this way (http://www.dotnetperls.com/convert-string-byte-array)
                 CertContent.Text = Encoding.ASCII.GetString(_loadedCertificate.RawData);
-                
             }
             catch (Exception ex)
             {
@@ -89,42 +87,42 @@ namespace CertificateManagerClient.CertificateManagerPages
                 switch (index)
                 {
                     case 0:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                     case 1:
-                        {
-                            newStoreName = "My";
-                            break;
-                        }
+                    {
+                        newStoreName = "My";
+                        break;
+                    }
                     case 2:
-                        {
-                            newStoreName = "Root";
-                            break;
-                        }
+                    {
+                        newStoreName = "Root";
+                        break;
+                    }
                     case 3:
-                        {
-                            newStoreName = "AuthRoot";
-                            break;
-                        }
+                    {
+                        newStoreName = "AuthRoot";
+                        break;
+                    }
                     default:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                 }
-            }//end if
+            } //end if
 
-            //else just make the default "CA"
+                //else just make the default "CA"
             else
             {
                 newStoreName = "CA";
             }
 
-            
+
             StoreLocation storeLocation = StoreLocation.LocalMachine;
- 
+
 
             bool added = false;
             if (ServerName.Text.Length > 3 && !ServerName.Text.Equals(""))
@@ -190,64 +188,60 @@ namespace CertificateManagerClient.CertificateManagerPages
         //did not end up using this
         public void OnExecute(object parameter)
         {
-            var values = (object[])parameter;
-            var fileName = (string)values[0];
-            var serverName = (string)values[1];
+            var values = (object[]) parameter;
+            var fileName = (string) values[0];
+            var serverName = (string) values[1];
             var myStoreName = (string) values[2];
         }
-        
-                private void SaveCertButton_Click(object sender, RoutedEventArgs e)
-                {
-             //instantiate web service
-              //      CertificateWarehouseService.CertificateWarehouseServiceClient
-                //        wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
 
-                    //instantiate windows service
-                    CertificateService.CertificateClient wsref = new CertificateService.CertificateClient();
-                    //CertManagerSvc.CertificateManagerClient wsref = new CertManagerSvc.CertificateManagerClient();
+        private void SaveCertButton_Click(object sender, RoutedEventArgs e)
+        {
+            //instantiate web service
+            //      CertificateWarehouseService.CertificateWarehouseServiceClient
+            //        wsref = new CertificateWarehouseService.CertificateWarehouseServiceClient();
 
-            
-                    //new CertificateManager Certificate
-                    Certificate certificate = new Certificate();
-                    //certificate.Name = CertName.Text;
-                    //certificate.StartDate = Convert.ToDateTime(StartDate.Text);
-                    //certificate.EndDate = Convert.ToDateTime(EndDate.Text);
-                    //certificate.ExpirationDate = Convert.ToDateTime(ExpirationDate.Text);
-                    //certificate.Thumbprint = Thumbprint.Text;
-                    //try converting certificate content from text back to bytes (http://www.dotnetperls.com/convert-string-byte-array)
-                    certificate.Content = Encoding.ASCII.GetBytes(CertContent.Text);
+            //instantiate windows service
+            CertificateService.CertificateClient wsref = new CertificateService.CertificateClient();
+            //CertManagerSvc.CertificateManagerClient wsref = new CertManagerSvc.CertificateManagerClient();
 
-                    //hard-coding because I'm not using this database stuff on this page
-                    bool added = true; //wsref.AddCertificateToDatabase(certificate);
 
-                    if (added)
-                    {
-                        System.Diagnostics.Debug.WriteLine("Certificate added!");
-                        //System.Diagnostics.Debug.WriteLine("Certificate Thumbprint = {0}", certificate.Thumbprint);
-                    }
-                    else
-                    {
-                        System.Diagnostics.Debug.WriteLine("Certificate not added :-( ");
-                    }
+            //new CertificateManager Certificate
+            Certificate certificate = new Certificate();
+            //certificate.Name = CertName.Text;
+            //certificate.StartDate = Convert.ToDateTime(StartDate.Text);
+            //certificate.EndDate = Convert.ToDateTime(EndDate.Text);
+            //certificate.ExpirationDate = Convert.ToDateTime(ExpirationDate.Text);
+            //certificate.Thumbprint = Thumbprint.Text;
+            //try converting certificate content from text back to bytes (http://www.dotnetperls.com/convert-string-byte-array)
+            certificate.Content = Encoding.ASCII.GetBytes(CertContent.Text);
 
-                }
-         
+            //hard-coding because I'm not using this database stuff on this page
+            bool added = true; //wsref.AddCertificateToDatabase(certificate);
+
+            if (added)
+            {
+                System.Diagnostics.Debug.WriteLine("Certificate added!");
+                //System.Diagnostics.Debug.WriteLine("Certificate Thumbprint = {0}", certificate.Thumbprint);
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Certificate not added :-( ");
+            }
+        }
     }
 
 
     public class MyCertificateProvider : IMultiValueConverter
-{
-    public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
     {
-        return values;
-    }
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            return values;
+        }
 
-    
-  public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
-
     }
- 
 }

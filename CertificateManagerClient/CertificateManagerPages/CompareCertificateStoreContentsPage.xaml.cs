@@ -13,14 +13,15 @@ namespace CertificateManagerClient.CertificateManagerPages
     /// </summary>
     public partial class CompareCertificateStoreContentsPage : Page
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly log4net.ILog log =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public CompareCertificateStoreContentsPage()
         {
             InitializeComponent();
             log.Debug("In CompareCertificateStore... InitializeComponent");
-
         }
-        
+
 
         private void ListCertButton_Click(object sender, RoutedEventArgs e)
         {
@@ -43,34 +44,34 @@ namespace CertificateManagerClient.CertificateManagerPages
                 switch (index)
                 {
                     case 0:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                     case 1:
-                        {
-                            newStoreName = "My";
-                            break;
-                        }
+                    {
+                        newStoreName = "My";
+                        break;
+                    }
                     case 2:
-                        {
-                            newStoreName = "Root";
-                            break;
-                        }
+                    {
+                        newStoreName = "Root";
+                        break;
+                    }
                     case 3:
-                        {
-                            newStoreName = "AuthRoot";
-                            break;
-                        }
+                    {
+                        newStoreName = "AuthRoot";
+                        break;
+                    }
                     default:
-                        {
-                            newStoreName = "CA";
-                            break;
-                        }
+                    {
+                        newStoreName = "CA";
+                        break;
+                    }
                 }
-            }//end if
+            } //end if
             //hard-coded since Local User only works on the local machine
-                var storeLocation = StoreLocation.LocalMachine;
+            var storeLocation = StoreLocation.LocalMachine;
 
             if (ServerName.Text.Length > 3 && !ServerName.Text.Equals(""))
             {
@@ -80,7 +81,6 @@ namespace CertificateManagerClient.CertificateManagerPages
             {
                 log.Error("Did not get a good serverName for server1");
                 MessageBox.Show("Enter a good server name for server1");
-                
             }
 
             if (ServerName2.Text.Length > 3 && !ServerName2.Text.Equals(""))
@@ -97,7 +97,7 @@ namespace CertificateManagerClient.CertificateManagerPages
             System.Diagnostics.Debug.WriteLine("serverName2 = {0}", serverName2);
             System.Diagnostics.Debug.WriteLine("newStoreName = {0}", newStoreName);
             System.Diagnostics.Debug.WriteLine("storeLocation = {0}", storeLocation.ToString());
-                
+
             //first, list the contents for the 2 servers:
             try
             {
@@ -131,13 +131,14 @@ namespace CertificateManagerClient.CertificateManagerPages
 
             try
             {
-                
                 //http://stackoverflow.com/questions/16716247/wcf-service-timeout-setting
                 //try setting timeout to 2 minutes
                 wsref2.InnerChannel.OperationTimeout = new TimeSpan(0, 2, 0);
                 wsref2.Open();
                 log.Debug("Right before second ListCertificatesInRemoteStore -- server2");
-                var server2CertList = new List<X509Certificate2>(wsref2.ListCertificatesInRemoteStore(newStoreName, storeLocation, serverName2));
+                var server2CertList =
+                    new List<X509Certificate2>(wsref2.ListCertificatesInRemoteStore(newStoreName, storeLocation,
+                        serverName2));
                 log.Debug("Right after second ListCertificatesInRemoteStore -- server2");
 
                 //should be greater than 0
@@ -160,9 +161,9 @@ namespace CertificateManagerClient.CertificateManagerPages
                 wsref2.Close();
             }
 
-            
+
             //DataGrid stuff based on this:  http://www.dotnetperls.com/datagrid
-                //try to retrieve certificates from a remote CA
+            //try to retrieve certificates from a remote CA
 
             try
             {
@@ -201,5 +202,4 @@ namespace CertificateManagerClient.CertificateManagerPages
             if (grid != null) grid.ItemsSource = items;
         }
     }
-    }
-
+}
